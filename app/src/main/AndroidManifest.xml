@@ -236,6 +236,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".soOrders.soViewActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".bookOrdersView.bookOrderViewActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"

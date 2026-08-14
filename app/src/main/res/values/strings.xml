@@ -13,6 +13,7 @@
     <string name="label_order_status">Order Status</string>
     <string name="label_liftotp_view">Lifting OTP View</string>
     <string name="label_exceptipn_order">Exception Order</string>
+    <string name="label_so_order">SO</string>
     <string name="label_book_order_view">Live Order Status</string>
 
     <string name="label_ok">Ok</string>

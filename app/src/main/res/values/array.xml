@@ -17,6 +17,7 @@
         <item>@drawable/otp_icon</item>
         <item>@drawable/order_summar_2</item>
         <item>@drawable/order_summar_2</item>
+        <item>@drawable/order_summar_2</item>
 
     </integer-array>
     <string-array name="menu_title">
@@ -34,6 +35,7 @@
         <item>@string/label_order_status</item>
         <item>@string/label_liftotp_view</item>
         <item>@string/label_exceptipn_order</item>
+        <item>@string/label_so_order</item>
         <item>@string/label_book_order_view</item>
     </string-array>
 

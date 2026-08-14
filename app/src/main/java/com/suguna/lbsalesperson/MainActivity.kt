@@ -30,6 +30,7 @@ import com.suguna.lbsalesperson.customerclub.activity.CustomerClubActivity
 import com.suguna.lbsalesperson.diffpriceallocation.DiffPriceallocation
 import com.suguna.lbsalesperson.diffpriceallocation.Model.DiffnameModel
 import com.suguna.lbsalesperson.exceptionOrders.exceptionViewActivity
+import com.suguna.lbsalesperson.soOrders.soViewActivity
 import com.suguna.lbsalesperson.farmallocation.FarmAllocationActivity
 import com.suguna.lbsalesperson.feedback.activity.FeedBackActivity
 import com.suguna.lbsalesperson.liftotpview.LiftingOtpViewActivity
@@ -109,10 +110,10 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
                 vv?.title = myMenuTitleArray.get(k)
                if (!((vv?.title.equals(getString(R.string.label_branch_allocation))) || (vv?.title.equals(getString(R.string.label_farm_allocation))) || ((vv?.title.equals(getString(R.string.label_order_status)))))) {
                     //mMenus.add(vv!!)
-                   if (!((vv?.title.equals(getString(R.string.label_diff_price_declaration))) || (vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_book_order_view))))) {
+                   if (!((vv?.title.equals(getString(R.string.label_diff_price_declaration))) || (vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_so_order))) || (vv?.title.equals(getString(R.string.label_book_order_view))))) {
                        if(getLoginUser(myContext).ledgerId.equals("2022"))
                        {
-                           if (!(vv?.title.equals(getString(R.string.label_liftotp_view))) || !(vv?.title.equals(getString(R.string.label_exceptipn_order))) || !(vv?.title.equals(getString(R.string.label_book_order_view)))) {
+                           if (!(vv?.title.equals(getString(R.string.label_liftotp_view))) || !(vv?.title.equals(getString(R.string.label_exceptipn_order))) || !(vv?.title.equals(getString(R.string.label_so_order))) || !(vv?.title.equals(getString(R.string.label_book_order_view)))) {
                                mMenus.add(vv!!)
                            }
                        }
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
                 }
                 if(!getLoginUser(myContext).FARM_WISE_AREA.equals("0"))
                 {
-                    if ((vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_book_order_view)))) {
+                    if ((vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_so_order))) || (vv?.title.equals(getString(R.string.label_book_order_view)))) {
                         mMenus.add(vv!!)
                     }
                 }
@@ -160,7 +161,7 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
                 val vv: DasboardMenus? = DasboardMenus()
                 vv?.icons = myMenuImageArray.getResourceId(k, 0)
                 vv?.title = myMenuTitleArray.get(k)
-                if (!( (vv?.title.equals(getString(R.string.label_price_declaration))) || (vv?.title.equals(getString(R.string.label_diff_price_declaration))) || ((vv?.title.equals(getString(R.string.label_order_status)))) || ((vv?.title.equals(getString(R.string.label_liftotp_view)))) || ((vv?.title.equals(getString(R.string.label_today_target)))) || ((vv?.title.equals(getString(R.string.label_exceptipn_order)))) || ((vv?.title.equals(getString(R.string.label_book_order_view)))))) {
+                if (!( (vv?.title.equals(getString(R.string.label_price_declaration))) || (vv?.title.equals(getString(R.string.label_diff_price_declaration))) || ((vv?.title.equals(getString(R.string.label_order_status)))) || ((vv?.title.equals(getString(R.string.label_liftotp_view)))) || ((vv?.title.equals(getString(R.string.label_today_target)))) || ((vv?.title.equals(getString(R.string.label_exceptipn_order)))) || ((vv?.title.equals(getString(R.string.label_so_order)))) || ((vv?.title.equals(getString(R.string.label_book_order_view)))))) {
                     mMenus.add(vv!!)
                 }
             } /*}else {
@@ -413,6 +414,12 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
 
                 /*  val i = Intent(this@MainActivity, BranchAllocationActivity::class.java)
                   startActivity(i)*/
+            }
+            getString(R.string.label_so_order) -> {
+
+                val activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(this, aView, "toolbar_transition")
+                val inn = Intent(this, soViewActivity::class.java)
+                startActivity(inn, activityOptionsCompat.toBundle())
             }
             getString(R.string.label_book_order_view) -> {
 
