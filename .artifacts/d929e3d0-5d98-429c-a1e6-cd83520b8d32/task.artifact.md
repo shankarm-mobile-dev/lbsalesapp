@@ -1,5 +1,5 @@
 - [x] Update `.gitignore` to protect sensitive files
-- [/] Remove existing `.git` directory
-- [ ] Initialize new Git repository
-- [ ] Add new remote origin
-- [ ] Create initial commit and push to GitHub
+- [x] Remove existing `.git` directory
+- [x] Initialize new Git repository
+- [x] Add new remote origin
+- [x] Create initial commit and push to GitHub
