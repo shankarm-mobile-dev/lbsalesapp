@@ -1,0 +1,213 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame">
+
+    <TextView
+        android:id="@+id/txtZoneName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#F78181"
+        android:gravity="left"
+        android:padding="4dp"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+    <!--     <TextView -->
+    <!--         android:id="@+id/txtSatelliteBranch" -->
+    <!--         android:layout_width="fill_parent" -->
+    <!--         android:layout_height="wrap_content" -->
+    <!--         android:background="#FF0040" -->
+    <!--         android:gravity="center" -->
+    <!--         android:padding="4dp"        -->
+    <!--         android:textColor="@android:color/white" -->
+    <!--         android:textSize="14dip" -->
+    <!--         android:textStyle="bold" -->
+    <!--         android:visibility="visible" /> -->
+
+    <TextView
+        android:id="@+id/txtBroilerHdr"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_button_login"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Broiler Branches"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/txtRetailHdr"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_button_login"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Retail Branches"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:id="@+id/lydetail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5sp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tvbranchname"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="0"
+            android:layout_gravity="center"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvrate_ncopp"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="#000000"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvrate"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+
+            android:textColor="#000000"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvrate_copp"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="#000000"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/tvrate_copp_wt"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="#000000"
+
+            android:textSize="10sp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/edtrate_ncobb"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/bg_border_gray"
+            android:textColor="#000000"
+            android:textSize="10sp"
+
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/edtrate"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/bg_border_gray"
+            android:textColor="#000000"
+            android:textSize="10sp"
+
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/edtrate_cobb"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/bg_border_gray"
+            android:textColor="#000000"
+            android:textSize="10sp"
+
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/edtrate_cobb_wt"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/bg_border_gray"
+            android:textColor="#000000"
+            android:textSize="10sp"
+
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

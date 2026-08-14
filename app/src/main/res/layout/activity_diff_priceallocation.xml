@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".diffpriceallocation.DiffPriceallocation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark"
+        >
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center|left"
+            android:text="@string/label_diff_price_declaration"
+            android:textColor="@color/white"
+            android:padding="@dimen/dimen5"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.25"
+            
+            android:gravity="center|right"
+            android:text="Month"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <EditText
+            android:id="@+id/edtdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.75"
+            android:background="@drawable/bg_border_gray"
+            android:drawableRight="@drawable/ic_date_picker"
+            android:editable="false"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text="Sep-2022"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.25"
+            
+            android:gravity="center|right"
+            android:text="Region"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <EditText
+            android:id="@+id/edtregion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.75"
+            android:background="@drawable/bg_border_gray"
+
+            android:editable="false"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text=""
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_border_gray"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Declare Category"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:padding="@dimen/dimen10"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_header_selector"
+        android:orientation="vertical"
+        android:padding="2dip">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        >
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:text="Product"
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+<View
+    android:layout_width="1dp"
+    android:layout_height="match_parent"
+    android:background="@color/white"></View>
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:text="Body. Wt. (Kg)"
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="Effective Date"
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        >
+
+        <TextView
+            android:id="@+id/tvserviceno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:text=""
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <TextView
+            android:id="@+id/tvservicedate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".75"
+            android:gravity="center"
+            android:text="From"
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvservicedate1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".75"
+            android:gravity="center"
+            android:text="To"
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            android:paddingRight="1dp"
+            
+            android:textStyle="bold" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <TextView
+            android:id="@+id/tvservicedate2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="From "
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvservicedate3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="To "
+            android:textColor="#ffffff"
+            android:textSize="14dip"
+            
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:scrollbars="none"
+        tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

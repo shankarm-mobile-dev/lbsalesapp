@@ -1,0 +1,854 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".75"
+                    
+                    android:gravity="center"
+                    android:text="Date"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="2.8"
+                    android:background="@drawable/bg_border_gray"
+                    android:drawableRight="@drawable/ic_date_picker"
+                    android:editable="false"
+                    
+                    android:gravity="left"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="28-SEP-2022"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvitem"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight=".75"
+                    android:editable="false"
+                    
+                    android:gravity="center"
+                    android:text="Item"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edtitem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="3.20"
+                    android:background="@drawable/bg_border_gray"
+                    
+                    android:gravity="left"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:text="BROILER CULL BIRD"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/saveButton"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.05"
+                    android:background="@drawable/btn_border_gray"
+                    android:gravity="center"
+                   
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorAccent"
+                        android:src="@drawable/ic_save" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Confirm"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Main Heading -->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_header_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dip"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvserviceno"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Branch"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="#000000"
+            android:textCursorDrawable="@null"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvservicedate"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="right"
+            android:text="Suguna Price"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvservicedate1"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="right"
+            android:text="Cobb Price/Cobb Associate Price"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvservicedate2"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="right"
+            android:text="Non Cobb/Local Price"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="33dp"
+            android:layout_height="10dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <!-- Second Sample -->
+    <LinearLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+
+        >
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#F78181"
+            android:gravity="left"
+            android:padding="4dp"
+            android:text="TN South"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Tandoori"
+                android:textStyle="bold"
+                />
+
+            <TextView
+
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Medium"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Standard"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Big"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="Oversize"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_marginLeft="1dp"
+                android:background="@drawable/menu_header_selector"
+                android:textColor="@color/white"
+                android:padding="2dp"
+                android:textSize="12dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Cobb/Cobb Asso."
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : Nagercoil"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginLeft="2dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : Vallioor"
+            android:textColor="@color/black"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : Coimbatore"
+            android:textColor="@color/black"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : Tenkasi"
+            android:textColor="@color/black"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Branch : Madurai"
+            android:textColor="@color/black"
+            android:layout_marginLeft="2dp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+            <EditText
+                android:layout_marginLeft="1dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_border_box"
+                android:gravity="right"
+                android:inputType="numberDecimal"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:scrollbars="none"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        />
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@android:color/white"
+        android:dividerHeight="0.80dp"
+        android:visibility="gone" />
+
+    <!--    <include
+            android:id="@+id/include1"
+            layout="@layout/footer" />-->
+</LinearLayout>

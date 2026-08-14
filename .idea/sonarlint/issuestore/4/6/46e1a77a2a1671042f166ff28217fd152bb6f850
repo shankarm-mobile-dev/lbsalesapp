@@ -1,0 +1,69 @@
+
+c	java:S101»"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Èä‚
+U
+java:S1155î">Use isEmpty() to check whether the collection is empty or not.(ğÃÕ“
+f	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+f	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+k	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¼øÈıÿÿÿÿ
+g	java:S117á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+g	java:S117á"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+y
+java:S1128"^Remove this unused import 'com.suguna.lbsalesperson.Adapter.ListViewAdapter_outstandingsales'.(æ§†Åıÿÿÿÿ
+F
+java:S1659)"+Declare "MyPREFERENCES" on a separate line.(¾ëÛ³øÿÿÿÿ
+=
+java:S16590"'Declare "emptyText" on a separate line.(÷äœ™
+t	java:S115)"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¾ëÛ³øÿÿÿÿ
+t	java:S115*"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+n	java:S115+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+n	java:S116."ZRename this field "list_dailyprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âş©%
+{	java:S1161"aRename this field "Ministatement_POJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Ò¾—şÿÿÿÿ
+|	java:S1162"bRename this field "Ministatement_POJOlist1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÅÖşÿÿÿÿ
+s	java:S1167"YRename this field "OrderSales_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´²²‘ıÿÿÿÿ
+8
+java:S1659E""Declare "TKEY" on a separate line.(¾ğ¥¨
+c	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½º¡
+t
+java:S2293]"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+h	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‘Àáÿÿÿÿÿ
+W
+java:S1854q"<Remove this useless assignment to local variable "POJOlist".(Û¼øÈıÿÿÿÿ
+t
+java:S2293q"YReplace the type specification in this constructor call with the diamond operator ("<>").(Û¼øÈıÿÿÿÿ
+t
+java:S2293u"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+u
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+3
+java:S1116…"Remove this empty statement.(¯¸—®
+N
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135–"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+2
+java:S3626ª"Remove this redundant jump.(ûÁİ…
+d	java:S100²"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ş™¿
+N
+java:S1135³"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+9
+java:S1659á""Declare "TKEY" on a separate line.(¾ğ¥¨
+N
+java:S1135İ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+u
+java:S2293ä"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+r
+java:S3923î"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ğÃÕ“
+?
+java:S1481E")Remove this unused "TKEY" local variable.(¾ğ¥¨
+H
+java:S1481q"-Remove this unused "POJOlist" local variable.(Û¼øÈıÿÿÿÿ
+D
+java:S1481Ş"-Remove this unused "download" local variable.(ªù¤Ë
+V	java:S125U"<This block of commented-out lines of code should be removed.(óì´üÿÿÿÿ
+Q	java:S125_"<This block of commented-out lines of code should be removed.(ƒ¿”„
+Q	java:S125p"<This block of commented-out lines of code should be removed.(à£í¿
+V	java:S125r"<This block of commented-out lines of code should be removed.(ÀÊ—÷ıÿÿÿÿ
+Q	java:S125w"<This block of commented-out lines of code should be removed.(ƒ¿”„
+V	java:S125}"<This block of commented-out lines of code should be removed.(¯–¢Øşÿÿÿÿ
+W	java:S125‡"<This block of commented-out lines of code should be removed.(±×¿ÿşÿÿÿÿ
+R	java:S125Á"<This block of commented-out lines of code should be removed.(­¹ğ

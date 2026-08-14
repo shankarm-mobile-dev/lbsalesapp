@@ -1,0 +1,21 @@
+
+f
+java:S1128"PRemove this unused import 'com.suguna.lbsalesperson.OutstandingSalesHierarchy2'.(ÿšÝ¿
+>
+java:S16598"#Declare "price" on a separate line.(®®£ÿÿÿÿÿ
+R
+java:S3972M"7Move this "if" to a new line or add the missing "else".(¬÷ý‰øÿÿÿÿ
+f	java:S1179"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô€ä
+B
+java:S16598"'Declare "following" on a separate line.(®®£ÿÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŠŽŽúÿÿÿÿ
+M
+java:S1135d"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+T
+java:S1128">Remove this unused import 'android.provider.ContactsContract'.(üç§±
+e
+java:S1128"ORemove this unused import 'com.suguna.lbsalesperson.OutstandingSalesHierarchy'.(¨›×Ù
+Q	java:S125"<This block of commented-out lines of code should be removed.(‰ôøŽ
+O
+java:S1117I"9Rename "count" which hides the field declared at line 31.(æÕ¿¼
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ôôÁ

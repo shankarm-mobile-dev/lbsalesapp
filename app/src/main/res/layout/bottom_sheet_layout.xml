@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_marginBottom="20dp"
+   >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/gery_inactive"
+        android:gravity="center|right"
+        android:padding="10dp"
+        android:weightSum="5">
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:padding="@dimen/dimen5"
+            android:gravity="center|right"
+            android:src="@drawable/ic_close_icon"></ImageView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center"
+            android:text="Product "
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <EditText
+            android:id="@+id/productlist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.25"
+            android:background="@drawable/bg_border_gray"
+            android:drawableRight="@drawable/ic_drop_down"
+            android:editable="false"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="Select"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="5dp">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center"
+            android:text="B.Wt.(Kg)"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/dimen5"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="3.25"
+            android:weightSum="2"
+            android:padding="5dp">
+        <EditText
+            android:id="@+id/fromwt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_gray"
+
+            android:inputType="numberDecimal"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text=""
+            android:hint=""
+            android:textStyle="bold" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+
+                
+                android:gravity="center"
+                android:text="To"
+                android:textColor="@color/black"
+
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingRight="@dimen/dimen5"/>
+        <EditText
+            android:id="@+id/towt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_border_gray"
+
+            android:hint=""
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text=""
+            android:inputType="numberDecimal"
+            android:textStyle="bold" />
+    </LinearLayout></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:visibility="gone"
+        android:padding="5dp">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center"
+            android:text="Bt. Wt. To(Kg)"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/dimen5"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="5dp">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center"
+            android:text="Effective From Date"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <TextView
+            android:id="@+id/fromdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.25"
+            android:background="@drawable/bg_border_gray"
+            android:drawableRight="@drawable/ic_date_picker"
+
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="Select date"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="5dp">
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center"
+            android:text="Effective To Date"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <TextView
+            android:id="@+id/todate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.25"
+            android:background="@drawable/bg_border_gray"
+            android:drawableRight="@drawable/ic_date_picker"
+
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:text="Select date"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:background="@drawable/btn_border_gray"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+
+        <TextView
+            android:id="@+id/txtsaveButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:padding="@dimen/dimen10"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

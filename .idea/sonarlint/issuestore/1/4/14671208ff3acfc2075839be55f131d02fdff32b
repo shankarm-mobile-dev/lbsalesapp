@@ -1,0 +1,11 @@
+
+dkotlin:S107Õ"GThis function has 8 parameters, which is greater than the 7 authorized.(›İëŸÿÿÿÿÿ
+Dkotlin:S1481Ú"+Remove this unused "mImage" local variable.(³öÓ–
+ekotlin:S117Ù"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(æÉÙ†
+xkotlin:S1186á"ZAdd a nested comment explaining why this function is empty or complete the implementation.(¼”šâüÿÿÿÿ
+Fkotlin:S108´")Either remove or fill this block of code.(ÍÖ¥ºÿÿÿÿÿ
+jkotlin:S117Ú"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(øœÇéúÿÿÿÿ
+Ekotlin:S1481Ù",Remove this unused "mLayout" local variable.(²·á‡
+ykotlin:S100Û	"\Rename function "GetUserClubDetailsCase" to match the regular expression ^[a-z][a-zA-Z0-9]*$(®µáúÿÿÿÿ
+>kotlin:S125å"Remove this commented out code.(ÆÜğâ8ŠØÎ—¨.
+skotlin:S1186ê"ZAdd a nested comment explaining why this function is empty or complete the implementation.(­ïã

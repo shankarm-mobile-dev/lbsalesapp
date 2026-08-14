@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Suguna LB Sales Team</string>
+    <string name="label_price_list">Price List</string>
+    <string name="label_order_summary">Order Summary</string>
+    <string name="label_feedback">Feedback</string>
+    <string name="label_outStanding">OutStanding</string>
+    <string name="label_branch_allocation">Branch Allocation</string>
+    <string name="label_target_vs_achieved">Target Vs Achieved</string>
+    <string name="label_price_declaration">Price Declaration</string>
+    <string name="label_customer_club">Customer Club</string>
+    <string name="label_farm_allocation">Farm Allocation</string>
+    <string name="label_diff_price_declaration">Product Declaration</string>
+    <string name="label_order_status">Order Status</string>
+    <string name="label_liftotp_view">Lifting OTP View</string>
+    <string name="label_exceptipn_order">Exception Order</string>
+    <string name="label_book_order_view">Live Order Status</string>
+
+    <string name="label_ok">Ok</string>
+    <string name="label_Allocated">Allocated</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="settings">Settings</string>
+    <string name="choose_time_caps">CHOOSE TIME</string>
+    <string name="no_data_found">No Data Found!</string>
+    <string name="label_search">Search</string>
+    <string name="dismiss">Dismiss</string>
+
+    <string name="no_internet">Oops, No internet connection</string>
+    <string name="label_branch_name">Branch</string>
+    <string name="label_farm_name">Farm Name</string>
+    <string name="label_vechicle_no">Vehicle No.</string>
+    <string name="label_qty">Qty(KG)</string>
+    <string name="label_bdwt">Req.Bt.wt.</string>
+    <string name="label_avgbdwt">Avg.wt.</string>
+    <string name="label_ws_name">WS. Name</string>
+    <string name="label_weighment_type">Weighment Type</string>
+    <string name="label_ws_mob">Mobile No.</string>
+    <string name="label_submit">Submit</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_cancel_order">Cancel Allocation</string>
+    <string name="allocate">Allocate</string>
+    <string name="msg_success">Successfully compeleted</string>
+    <string name="msg_something_went_wrong">Something went wrong!!!. Please try again</string>
+    <string name="copyrights">Application Version 3.7</string>
+    <string name="successfully_msg" translatable="false">Close navigation drawer</string>
+    <string name="is_editable">isEditable</string>
+    <string name="device_id">deviceId</string>
+    <string name="label_view_price">View Price</string>
+    <string name="label_declare_price">Declare Price</string>
+    <string name="label_resent">Resent</string>
+    <string name="label_local_price">Local Market Trend Change</string>
+
+    <string name="intent_customer_club_selected_date">selected_date</string>
+    <string name="intent_customer_club_selected_display_date">display_date</string>
+    <string name="title_alert">Alert</string>
+    <string name="title_activity_concessionentry">ConcessionentryActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="label_liftingtime">Lifting Time Slot</string>
+
+    <string name="label_today_target">Today Target</string>"
+</resources>

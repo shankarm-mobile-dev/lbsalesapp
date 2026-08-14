@@ -1,0 +1,30 @@
+
+M
+java:S1135y"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+r
+java:S3923Š"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ğÃÕ“
+f	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+n	java:S116'"ZRename this field "list_dailyprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âş©%
+n	java:S115#"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+f	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+o	java:S115!"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+c	java:S100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ş™¿
+8
+java:S1659}""Declare "TKEY" on a separate line.(¾ğ¥¨
+C
+java:S1481z"-Remove this unused "download" local variable.(ªù¤Ë
+Q	java:S125]"<This block of commented-out lines of code should be removed.(­¹ğ
+U
+java:S1155Š">Use isEmpty() to check whether the collection is empty or not.(ğÃÕ“
+=
+java:S1659)"'Declare "emptyText" on a separate line.(÷äœ™
+p
+java:S2293€"YReplace the type specification in this constructor call with the diamond operator ("<>").(‚£¬ı
+v	java:S116"aRename this field "Ministatement_POJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èèÕ
+b	java:S101W"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(àÛ˜
+t	java:S115""ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+1
+java:S3626I"Remove this redundant jump.(ûÁİ…
+V	java:S125@"<This block of commented-out lines of code should be removed.(óì´üÿÿÿÿ
+M
+java:S1135R"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ

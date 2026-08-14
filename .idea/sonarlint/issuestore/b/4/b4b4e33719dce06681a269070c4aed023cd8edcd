@@ -1,0 +1,57 @@
+
+g	java:S117²"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÈ÷Ö
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¼Á¶
+g	java:S117£"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¼Á¶
+g	java:S117·"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ¼Á¶
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğüÿ
+?
+java:S1148Ç"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148İ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+w
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "diffDays".(Ù©Ï
+n	java:S115#"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‹ùÉe
+t	java:S115$"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ûí¡şÿÿÿÿ
+•
+java:S1845$"zRename field "notify" to prevent any misunderstanding/clash with method "notify" defined in superclass "java.lang.Object".(ûí¡şÿÿÿÿ
+U
+java:S1118 ":Add a private constructor to hide the implicit public one.(±Ê•×ÿÿÿÿÿ
+c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢‚ßÎ
+c	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šø§Û
+c	java:S100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀŞ­°
+c	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒìÙ”
+h	java:S100Z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôùÃ›øÿÿÿÿ
+c	java:S100i"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É’öä
+h	java:S100x"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(öéºèúÿÿÿÿ
+d	java:S100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÏŸÊ
+\
+java:S1858"E"ip" is already a string, there's no need to call "toString()" on it.(¬İ¥‚
+=
+java:S1905¿"'Remove this unnecessary cast to "Date".(¹¤™^
+C
+java:S1905Õ"'Remove this unnecessary cast to "Date".(ø°äÊúÿÿÿÿ
+i	java:S100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãö¦úÿÿÿÿ
+G
+java:S1172…"+Remove this unused method parameter "ctxt".(ãö¦úÿÿÿÿ
+d	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“úğ—
+P
+java:S1854•"9Remove this useless assignment to local variable "image".(ªÒ¥Ô
+c	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô·ñ
+P
+java:S1854ª"9Remove this useless assignment to local variable "image".(ªÒ¥Ô
+d	java:S100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÙŒÅ
+=
+java:S1172¶"&Remove these unused method parameters.(ÈÙŒÅ
+P
+java:S1854¾"9Remove this useless assignment to local variable "image".(ªÒ¥Ô
+A
+java:S1481•"*Remove this unused "image" local variable.(ªÒ¥Ô
+A
+java:S1481ª"*Remove this unused "image" local variable.(ªÒ¥Ô
+A
+java:S1481¾"*Remove this unused "image" local variable.(ªÒ¥Ô
+R	java:S125æ"<This block of commented-out lines of code should be removed.(ŸÉ‡
+R	java:S125ì"<This block of commented-out lines of code should be removed.(Œ¨
+R	java:S125ô"<This block of commented-out lines of code should be removed.(´ÒÛ
+W	java:S125ø"<This block of commented-out lines of code should be removed.(ì™•„ıÿÿÿÿ
+W	java:S125û"<This block of commented-out lines of code should be removed.(ÁŠ±ãûÿÿÿÿ

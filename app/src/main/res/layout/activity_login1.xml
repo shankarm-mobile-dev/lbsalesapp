@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+
+    <RelativeLayout
+
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+
+        >
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <ImageView
+
+                android:layout_width="match_parent"
+
+                android:layout_height="0dp"
+
+                android:layout_weight="4"
+
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/ic_login" />
+
+            <View
+
+                android:layout_width="match_parent"
+
+                android:layout_height="0dp"
+
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:layout_margin="?actionBarSize"
+
+
+
+                android:text="@string/app_name"
+
+
+                android:textColor="#fff"
+                android:textSize="@dimen/txt_login_headsize"
+
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/edit_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/txt_login_editsize"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/bg_txt_username"
+
+                android:hint="Employee code"
+                android:inputType="number"
+                android:paddingLeft="60dp"
+                android:text=""
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/txt_login_textsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/txt_login_editsize"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_txt_password"
+
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingLeft="60dp"
+                android:text=""
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/txt_login_textsize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+            <Button
+                android:id="@+id/btn_submit1"
+                android:layout_width="wrap_content"
+
+                android:layout_height="35dp"
+
+                android:background="@drawable/round_corner_buttom"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+
+                android:text="sign in"
+
+                android:textColor="#777"
+
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="8dp"
+
+
+                android:text="Forgot your password?"
+                android:textColor="#fff"
+                android:textSize="@dimen/txt_login_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.883"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+
+                android:gravity="right|center"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+
+                    android:text="Sign in"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/txt_login_bigbottom"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="86dp"
+                    android:layout_height="86dp"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/bg_btn_login"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintHorizontal_bias="0.951"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginBottom="20dp"
+
+            android:gravity="center"
+
+            android:orientation="vertical">
+
+
+            <LinearLayout
+
+
+                android:id="@+id/lyt_register"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:gravity="center"
+                    android:text="Dont't you have an account? "
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/txt_login_bottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="11dp"
+
+                    android:text="Sign up"
+
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/txt_login_bigbottom"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="150dp"
+                android:layout_height="2dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/lightgray"></View>
+
+            <LinearLayout
+
+                android:id="@+id/lyt_enquriy"
+
+                android:layout_width="match_parent"
+
+                android:layout_height="55dp"
+
+
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+
+
+                    android:gravity="center"
+
+                    android:text="Interested New Customer Please Submit "
+
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/txt_login_bottom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/enquiry_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+
+                    android:text="Enquiry"
+
+                    android:textColor="@color/colorText"
+                    android:textSize="@dimen/txt_login_bigbottom"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="2dp"
+
+                android:gravity="center"
+
+                android:text="@string/copyrights"
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/txt_deviceid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="2dp"
+
+                android:gravity="center"
+
+                android:text="Device Id : "
+
+                android:textColor="@color/colorPrimary"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

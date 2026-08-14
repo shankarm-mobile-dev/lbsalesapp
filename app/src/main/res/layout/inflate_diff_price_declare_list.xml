@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/lyt_prod_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightgray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+
+        >
+
+        <TextView
+            android:id="@+id/txt_prod_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1.5"
+            android:gravity="left"
+            android:text="Tandoori Birds"
+            android:textColor="@color/black"
+            android:textSize="12dip"
+            android:paddingTop="8dip"
+            android:paddingBottom="8dip"
+            
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"></View>
+        <TextView
+            android:id="@+id/txt_fromwt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".75"
+            android:gravity="center"
+            android:text="1.1"
+            android:textColor="@color/black"
+            android:textSize="12dip"
+            android:paddingTop="8dip"
+            android:paddingBottom="8dip"
+            
+            />
+
+        <TextView
+            android:id="@+id/txt_towt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".75"
+            android:gravity="center"
+            android:text="1.4"
+            android:textColor="@color/black"
+            android:textSize="12dip"
+            android:paddingRight="1dp"
+            android:paddingTop="8dip"
+            android:paddingBottom="8dip"
+            
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"></View>
+        <TextView
+            android:id="@+id/txt_fromdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1-Sep-22"
+            android:textColor="@color/black"
+            android:textSize="12dip"
+            android:paddingTop="8dip"
+            android:paddingBottom="8dip"
+            
+            />
+        <TextView
+            android:id="@+id/txt_todate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="30-Sep-22"
+            android:textColor="@color/black"
+            android:textSize="12dip"
+            android:paddingTop="8dip"
+            android:paddingBottom="8dip"
+            
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,58 @@
+
+F
+java:S1066Ñ"/Merge this if statement with the enclosing one.(««§û
+b	java:S101¤"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ØğÏ
+U
+java:S1155Ï">Use isEmpty() to check whether the collection is empty or not.(Ú°É­
+U
+java:S1155ñ">Use isEmpty() to check whether the collection is empty or not.(Ó±Óú
+l	java:S117™"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùóŞšøÿÿÿÿ
+>
+java:S1148U"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+w
+java:S14509"\Remove the "bfmTelelphony" field and declare it as a local variable in the relevant methods.(–÷ú¸ÿÿÿÿÿ
+F
+java:S1659'"+Declare "edit_password" on a separate line.(¸Û¡ˆøÿÿÿÿ
+E
+java:S1659("*Declare "str_password" on a separate line.(–ïŒŞúÿÿÿÿ
+o	java:S115*"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+t	java:S115+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+n	java:S115,"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+n	java:S115-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Æàò
+r	java:S116'"XRename this field "edit_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Û¡ˆøÿÿÿÿ
+r	java:S116'"XRename this field "edit_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Û¡ˆøÿÿÿÿ
+q	java:S116("WRename this field "str_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ïŒŞúÿÿÿÿ
+q	java:S116("WRename this field "str_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ïŒŞúÿÿÿÿ
+l	java:S1165"WRename this field "lyt_register" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´ûÂ
+i	java:S1166"URename this field "txt_forgot" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó˜4
+‚
+java:S1845:"gRename field "deviceid" to prevent any misunderstanding/clash with field "DeviceId" defined on line 45.(®ÏûŠøÿÿÿÿ
+h	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ÖíÄúÿÿÿÿ
+i	java:S100œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹šÛ…úÿÿÿÿ
+N
+java:S1135É"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+u
+java:S2293Ë"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÒÀÜ³ÿÿÿÿÿ
+i	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²…´¡ıÿÿÿÿ
+N
+java:S1135Œ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+D	java:S108¢")Either remove or fill this block of code.(ÒÌâ–øÿÿÿÿ
+˜
+java:S1186«"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦Œœ¢
+H
+java:S1481Ó",Remove this unused "deiveid" local variable.(˜ˆ•ğüÿÿÿÿ
+D
+java:S1481Ê"-Remove this unused "download" local variable.(ªù¤Ë
+G
+java:S10680",Remove this unused "progress" private field.(Øéß³şÿÿÿÿ
+V	java:S125^"<This block of commented-out lines of code should be removed.(©Î¥üúÿÿÿÿ
+Q	java:S125c"<This block of commented-out lines of code should be removed.(¸ô•³
+P	java:S125r"<This block of commented-out lines of code should be removed.(ÕÀ÷
+V	java:S125y"<This block of commented-out lines of code should be removed.(±Óışÿÿÿÿ
+Q	java:S125}"<This block of commented-out lines of code should be removed.(ûË¨’
+W	java:S125…"<This block of commented-out lines of code should be removed.(óì´üÿÿÿÿ
+R	java:S125¬"<This block of commented-out lines of code should be removed.(°ğß‘
+R	java:S125Õ"<This block of commented-out lines of code should be removed.(¸ô•³
+W	java:S125ö"<This block of commented-out lines of code should be removed.(ôš¯÷şÿÿÿÿ
+R	java:S125€"<This block of commented-out lines of code should be removed.(‡ùÉ
+R	java:S125‡"<This block of commented-out lines of code should be removed.(ÏÎ‹œ

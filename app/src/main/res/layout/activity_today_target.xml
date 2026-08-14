@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".Todaytarget.Todaytarget">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark"
+        >
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.75"
+            
+            android:gravity="center|left"
+            android:text="@string/label_today_target"
+            android:textColor="@color/white"
+            android:padding="@dimen/dimen5"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen5"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <EditText
+            android:id="@+id/edtdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="2.95"
+            android:background="@drawable/bg_border_gray"
+            android:drawableRight="@drawable/ic_date_picker"
+            android:editable="false"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text="Sep-2022"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/saveButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/btn_border_gray"
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:src="@drawable/ic_save" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1.25"
+            
+            android:gravity="center|right"
+            android:text="Region"
+            android:textColor="@color/white"
+            android:background="@drawable/menu_header_selector_curve"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:paddingRight="@dimen/dimen5"/>
+
+        <EditText
+            android:id="@+id/edtregion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="3.75"
+            android:background="@drawable/bg_border_gray"
+
+            android:editable="false"
+            
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:text=""
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/saveButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_border_gray"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Declare Category"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:padding="@dimen/dimen10"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/menu_header_selector"
+            android:orientation="vertical"
+            android:padding="5dip">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                android:paddingBottom="@dimen/dimen5"
+                >
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="2"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:text="In MT"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"
+                    
+                    android:textStyle="bold" />
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                >
+
+                <TextView
+                    android:id="@+id/tvserviceno"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:layout_weight="2"
+                    android:gravity="left"
+                    android:text="Cluster Name"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></View>
+                <TextView
+                    android:id="@+id/tvservicedate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:gravity="center|right"
+                    android:text="Target"
+                    android:paddingRight="@dimen/dimen5"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    
+                    android:textStyle="bold" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"></View>
+                <TextView
+                    android:id="@+id/tvservicedate1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.75"
+                    android:gravity="center|right"
+                    android:text="Last 5 Wks. Same Day Avg Sales"
+                    android:textColor="#ffffff"
+                    android:textSize="13sp"
+                    android:paddingRight="1dp"
+                    
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:scrollbars="none"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        >
+
+        <TextView
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_weight="2"
+            android:gravity="center|right"
+            android:text="Total  "
+            android:textColor="#000000"
+            android:textSize="15sp"
+            
+            android:textStyle="bold" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <TextView
+            android:id="@+id/tvtarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:gravity="center|right"
+            android:text=""
+            android:paddingRight="@dimen/dimen5"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            
+            android:textStyle="bold" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/white"></View>
+        <TextView
+            android:id="@+id/tvtargetavg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.75"
+            android:gravity="center|right"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:paddingRight="1dp"
+            
+            android:textStyle="bold" />
+
+
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

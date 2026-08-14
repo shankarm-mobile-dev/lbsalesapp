@@ -1,0 +1,64 @@
+
+h	java:S101½"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ä´è•ûÿÿÿÿ
+Z
+java:S1155à">Use isEmpty() to check whether the collection is empty or not.(õ“àÇûÿÿÿÿ
+Z
+java:S1155é">Use isEmpty() to check whether the collection is empty or not.(õ“àÇûÿÿÿÿ
+Z
+java:S1155û">Use isEmpty() to check whether the collection is empty or not.(õ“àÇûÿÿÿÿ
+Z
+java:S1155Š">Use isEmpty() to check whether the collection is empty or not.(ëâĞÃúÿÿÿÿ
+f	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+f	java:S117I"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+g	java:S117Ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+g	java:S117Ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+l	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôËÈºøÿÿÿÿ
+r
+java:S1128"WRemove this unused import 'com.suguna.lbsalesperson.Adapter.ListViewAdapter_pricelist'.(½ĞÅúÿÿÿÿ
+^
+java:S1128"HRemove this unused import 'com.suguna.lbsalesperson.POJO.SugPrice_POJO'.(ë‚ß‡
+=
+java:S16594"'Declare "emptyText" on a separate line.(ğÃÄÔ
+;
+java:S16594"%Declare "tv_name" on a separate line.(ğÃÄÔ
+o	java:S115-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+t	java:S115."ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+n	java:S115/"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+{	java:S116*"aRename this field "Ministatement_POJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãø¾Ûÿÿÿÿÿ
+w	java:S116,"bRename this field "Ministatement_POJOlist1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñß·ë
+n	java:S1162"ZRename this field "list_dailyprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âş©%
+g	java:S1164"RRename this field "tv_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÃÄÔ
+8
+java:S1659I""Declare "TKEY" on a separate line.(¾ğ¥¨
+c	java:S100\"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½º¡
+h	java:S100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‘Àáÿÿÿÿÿ
+N
+java:S1135Œ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135’"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+?
+java:S1185˜"(Remove this method to simply inherit it.(Ù«µ§
+2
+java:S3626¦"Remove this redundant jump.(ûÁİ…
+d	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ş™¿
+N
+java:S1135±"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+9
+java:S1659Ó""Declare "TKEY" on a separate line.(¾ğ¥¨
+N
+java:S1135Ï"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+u
+java:S2293Ö"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ã»ä¤ÿÿÿÿÿ
+w
+java:S3923à"[Remove this conditional structure or edit its code blocks so that they're not all the same.(õ“àÇûÿÿÿÿ
+?
+java:S1481I")Remove this unused "TKEY" local variable.(¾ğ¥¨
+D
+java:S1481Ğ"-Remove this unused "download" local variable.(ªù¤Ë
+V	java:S1259"<This block of commented-out lines of code should be removed.(øàöşÿÿÿÿ
+Q	java:S125F"<This block of commented-out lines of code should be removed.(×ûŒø
+Q	java:S125w"<This block of commented-out lines of code should be removed.(ƒ¿”„
+V	java:S125~"<This block of commented-out lines of code should be removed.(¯–¢Øşÿÿÿÿ
+R	java:S125š"<This block of commented-out lines of code should be removed.(À ¡ò
+W	java:S125â"<This block of commented-out lines of code should be removed.(ÍÔ¡ÿÿÿÿÿ
+W	java:S125õ"<This block of commented-out lines of code should be removed.(ÍÔ¡ÿÿÿÿÿ

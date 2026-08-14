@@ -1,0 +1,18 @@
+
+‚kotlin:S4144"dUpdate this function so that its implementation is not identical to "currentDateAndTime" on line 24.(®á±öüÿÿÿÿ
+ekotlin:S117‰"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(‹áëâ
+ikotlin:S1192%"LDefine a constant instead of duplicating this literal "dd MMM yyyy" 9 times.(Æ¥‘Íûÿÿÿÿ
+7kotlin:S125±"Remove this commented out code.(õç¿İ
+ekotlin:S117ñ"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(Æ¶‡
+okotlin:S117©"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(Ûõù•ıÿÿÿÿ
+ekotlin:S1192Ä"GDefine a constant instead of duplicating this literal "MMM dd" 3 times.(¼ŸÑ‰øÿÿÿÿ
+jkotlin:S117ğ"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(‘à§ıÿÿÿÿ
+okotlin:S117¤"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(œ¶¥©øÿÿÿÿ
+dkotlin:S11922"GDefine a constant instead of duplicating this literal "h:mm a" 3 times.(ÅğÇ¬øÿÿÿÿ
+ekotlin:S117—"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(€Ş–ô
+ekotlin:S117—"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(€Ş–ô
+jkotlin:S117¢"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(àªğèşÿÿÿÿ
+rkotlin:S1192‰"TDefine a constant instead of duplicating this literal "yyyy-MM-dd HH:mm:ss" 6 times.(÷’ùèüÿÿÿÿ
+kkotlin:S1192Ï"MDefine a constant instead of duplicating this literal "MMM dd, yyyy" 3 times.(ùÈŸñşÿÿÿÿ
+jkotlin:S117¡"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(‘à§ıÿÿÿÿ
+ekotlin:S117‰"MRename this parameter to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(‹áëâ

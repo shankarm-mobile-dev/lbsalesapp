@@ -1,0 +1,25 @@
+
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(å¯¸üÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(×ôôÁ
+8
+java:S16597"#Declare "today" on a separate line.(Âùëi
+8
+java:S16597"#Declare "lstwk" on a separate line.(Âùëi
+9
+java:S16597"$Declare "lst5wk" on a separate line.(Âùëi
+8
+java:S16597"#Declare "name1" on a separate line.(Âùëi
+;
+java:S16597"&Declare "todayavg" on a separate line.(Âùëi
+;
+java:S16597"&Declare "lstwkavg" on a separate line.(Âùëi
+<
+java:S16597"'Declare "lst5wkavg" on a separate line.(Âùëi
+O
+java:S1117Y"9Rename "count" which hides the field declared at line 29.(æÕ¿¼
+M
+java:S1135p"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(‰ôø
+V	java:S125H"<This block of commented-out lines of code should be removed.(é‚Ëåüÿÿÿÿ
+Q	java:S125J"<This block of commented-out lines of code should be removed.(‰Ä„Ö
+Q	java:S125P"<This block of commented-out lines of code should be removed.(–ıÚ«

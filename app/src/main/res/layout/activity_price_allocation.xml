@@ -1,0 +1,271 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:ignore="MergeRootFrame">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvdate"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    
+                    android:gravity="center"
+                    android:text="Date"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    
+                    android:gravity="left|center"
+                    android:text=" : "
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/edtdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="2.55"
+                    android:background="@drawable/bg_border_gray"
+                    android:drawableRight="@drawable/ic_date_picker"
+                    android:editable="false"
+                    
+                    android:gravity="left|center"
+                    android:padding="10dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:id="@+id/tvitem"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:editable="false"
+                    
+                    android:gravity="center"
+                    android:text="Product"
+                    android:textColor="#000000"
+                    android:textSize="13sp"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold" />
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    
+                    android:gravity="left|center"
+                    android:text=" : "
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/edtitem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/bg_border_gray"
+                    
+                    android:gravity="left"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="#000000" />
+
+                <LinearLayout
+                    android:id="@+id/saveButton"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_border_gray"
+                    android:gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorAccent"
+                        android:src="@drawable/ic_save" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Confirm"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_header_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dip">
+
+        <TextView
+            android:id="@+id/tvserviceno"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Branch"
+            android:textColor="#ffffff"
+            
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textColor="#000000"
+            android:textCursorDrawable="@null"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvservicedate2"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="right"
+            android:text="Provisional Price"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="visible"
+            
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvservicedate"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+
+            android:gravity="right"
+            android:text="Final Price"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            
+            android:textStyle="bold" />
+            <CheckBox
+                android:id="@+id/checkbox_fillfinalprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center">
+            </CheckBox>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvservicedate1"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            
+            android:gravity="right"
+            android:text="COBB"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvcobbwt"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            
+            android:gravity="right"
+            android:text="COBB Wt."
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="33dp"
+            android:layout_height="10dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:scrollbars="none"
+        tools:ignore="MissingConstraints" />
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:visibility="gone"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@android:color/white"
+        android:dividerHeight="0.80dp" />
+
+<!--    <include
+        android:id="@+id/include1"
+        layout="@layout/footer" />-->
+</LinearLayout>

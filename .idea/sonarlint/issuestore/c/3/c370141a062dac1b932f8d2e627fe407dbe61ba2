@@ -1,0 +1,48 @@
+
+f	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+9
+java:S1659À""Declare "TKEY" on a separate line.(¾ğ¥¨
+t	java:S115)"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+c	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½º¡
+u
+java:S2293Ã"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ã»ä¤ÿÿÿÿÿ
+N
+java:S1135ˆ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+V	java:S1255"<This block of commented-out lines of code should be removed.(øàöşÿÿÿÿ
+n	java:S115*"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+8
+java:S1659E""Declare "TKEY" on a separate line.(¾ğ¥¨
+D
+java:S1481½"-Remove this unused "download" local variable.(ªù¤Ë
+V	java:S125\"<This block of commented-out lines of code should be removed.(†èôÃùÿÿÿÿ
+=
+java:S1659/"'Declare "emptyText" on a separate line.(ğÃÄÔ
+n	java:S116-"ZRename this field "list_dailyprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âş©%
+d	java:S100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ş™¿
+Z
+java:S1155Î">Use isEmpty() to check whether the collection is empty or not.(õ“àÇûÿÿÿÿ
+;
+java:S1659/"%Declare "tv_name" on a separate line.(ğÃÄÔ
+N
+java:S1135¡"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+w
+java:S3923Î"[Remove this conditional structure or edit its code blocks so that they're not all the same.(õ“àÇûÿÿÿÿ
+Z
+java:S1155ë">Use isEmpty() to check whether the collection is empty or not.(ëâĞÃúÿÿÿÿ
+h	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‘Àáÿÿÿÿÿ
+o	java:S115("ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+Q	java:S125B"<This block of commented-out lines of code should be removed.(×ûŒø
+l	java:S117ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôËÈºøÿÿÿÿ
+g	java:S117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+N
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+N
+java:S1135¼"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+g	java:S116/"RRename this field "tv_name" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÃÄÔ
+h	java:S101«"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ä´è•ûÿÿÿÿ
+{	java:S116%"aRename this field "Ministatement_POJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãø¾Ûÿÿÿÿÿ
+g	java:S117À"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨
+w	java:S116&"bRename this field "Ministatement_POJOlist1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñß·ë
+?
+java:S1481E")Remove this unused "TKEY" local variable.(¾ğ¥¨
+f	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ğ¥¨

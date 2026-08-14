@@ -1,0 +1,184 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MergeRootFrame" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <TextView
+            android:id="@+id/tvdate"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="4dp"
+            android:gravity="center_vertical"
+            android:text="Date"
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/edtdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/edtitem"
+            android:layout_toRightOf="@+id/tvdate"
+            android:editable="false"
+            android:gravity="left"
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvitem"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tvdate"
+            android:layout_marginLeft="4dp"
+            android:editable="false"
+            android:gravity="left"
+            android:text="Item"
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtitem"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtdate"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:layout_toRightOf="@+id/tvitem"
+            android:gravity="left"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+         <TextView
+            android:id="@+id/tvreason"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tvitem"
+            android:layout_marginLeft="4dp"
+            android:editable="false"
+            android:gravity="left"
+            android:text="Reason"
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/edtreason"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtitem"
+            android:layout_toLeftOf="@+id/saveButton"
+            android:layout_toRightOf="@+id/tvreason"
+            android:gravity="left"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/saveButton"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/edtitem"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:background="@null"
+            android:contentDescription="@string/successfully_msg"
+            android:src="@drawable/save" />
+        
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="38dp"
+        android:layout_weight="0.04"
+        android:background="@drawable/menu_header_selector"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dip" >
+
+        <TextView
+            android:id="@+id/tvbranch"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:text="Branch  "
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+        
+          <View
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/tvprice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:text="    Price"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+        
+     <TextView
+            android:id="@+id/tvconrate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:text="   LMT   "
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold" />
+        
+         <TextView
+            android:id="@+id/tvfinal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="right"
+            android:text="Final Price"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:textStyle="bold"
+            android:visibility="gone"
+             />
+
+      
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@android:color/white"
+        android:dividerHeight="0.80dp" >
+    </ListView>
+  <include
+        android:id="@+id/include1"
+      android:visibility="gone"
+        layout="@layout/footer" />
+</LinearLayout>

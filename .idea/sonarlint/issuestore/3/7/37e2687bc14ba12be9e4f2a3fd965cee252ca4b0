@@ -1,0 +1,12 @@
+
+G
+java:S1659"1Declare "lyt_branch_hierachy" on a separate line.(Î†õ„
+I
+java:S1659"3Declare "lyt_customer_hierachy" on a separate line.(Î†õ„
+r	java:S116"]Rename this field "lyt_sales_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„
+s	java:S116"^Rename this field "lyt_branch_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„
+u	java:S116"`Rename this field "lyt_customer_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×û™§
+h	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ÖíÄúÿÿÿÿ
+1
+java:S3626="Remove this redundant jump.(ûÁÝ…

@@ -1,0 +1,60 @@
+
+a	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ØğÏ
+Z
+java:S1155®">Use isEmpty() to check whether the collection is empty or not.(¨üä”ûÿÿÿÿ
+>
+java:S1148@"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+w
+java:S1450("\Remove the "bfmTelelphony" field and declare it as a local variable in the relevant methods.(–÷ú¸ÿÿÿÿÿ
+F
+java:S1659"+Declare "edit_password" on a separate line.(œ‘õîÿÿÿÿÿ
+A
+java:S1659"&Declare "edit_otp" on a separate line.(œ‘õîÿÿÿÿÿ
+E
+java:S1659 "*Declare "str_password" on a separate line.(šØüıÿÿÿÿ
+@
+java:S1659 "%Declare "str_otp" on a separate line.(šØüıÿÿÿÿ
+A
+java:S1659$"&Declare "mobileno" on a separate line.(Ã²ûÿÿÿÿ
+r	java:S116"XRename this field "edit_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ‘õîÿÿÿÿÿ
+r	java:S116"XRename this field "edit_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ‘õîÿÿÿÿÿ
+m	java:S116"SRename this field "edit_otp" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ‘õîÿÿÿÿÿ
+q	java:S116 "WRename this field "str_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šØüıÿÿÿÿ
+q	java:S116 "WRename this field "str_password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šØüıÿÿÿÿ
+l	java:S116 "RRename this field "str_otp" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šØüıÿÿÿÿ
+u	java:S116%"[Rename this field "RegisterPOJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“ŸÌãşÿÿÿÿ
+h	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹šÛ…úÿÿÿÿ
+h	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ÖíÄúÿÿÿÿ
+N
+java:S1135¡"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+p
+java:S2293¤"YReplace the type specification in this constructor call with the diamond operator ("<>").(ƒĞ¹
+V
+java:S1854¸":Remove this useless assignment to local variable "mobile".(„ ñ¼ÿÿÿÿÿ
+S
+java:S1854·"<Remove this useless assignment to local variable "custname".(º›ò
+?
+java:S1659±"(Declare "statuscode" on a separate line.(¿ë·Ó
+<
+java:S1659±"%Declare "message" on a separate line.(¿ë·Ó
+=
+java:S1659±"&Declare "custname" on a separate line.(¿ë·Ó
+;
+java:S1659±"$Declare "mobile" on a separate line.(¿ë·Ó
+3
+java:S1116¶"Remove this empty statement.(â¯Í×
+D
+java:S1481¢"-Remove this unused "download" local variable.(ªù¤Ë
+D
+java:S1481±"-Remove this unused "custname" local variable.(¿ë·Ó
+B
+java:S1481±"+Remove this unused "mobile" local variable.(¿ë·Ó
+G
+java:S1068!",Remove this unused "progress" private field.(Øéß³şÿÿÿÿ
+Q	java:S125d"<This block of commented-out lines of code should be removed.(Ê×‘
+Q	java:S125k"<This block of commented-out lines of code should be removed.(–£å
+Q	java:S125p"<This block of commented-out lines of code should be removed.(ûË¨’
+V	java:S125x"<This block of commented-out lines of code should be removed.(óì´üÿÿÿÿ
+W	java:S125…"<This block of commented-out lines of code should be removed.(„åü‡ıÿÿÿÿ
+W	java:S125Ö"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ
+W	java:S125æ"<This block of commented-out lines of code should be removed.(Àµ®ãüÿÿÿÿ

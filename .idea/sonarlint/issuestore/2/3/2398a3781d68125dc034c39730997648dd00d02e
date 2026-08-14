@@ -1,0 +1,67 @@
+
+?
+java:S1481F")Remove this unused "TKEY" local variable.(¾ð¥¨
+g	java:S117â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ð¥¨
+t
+java:S2293^"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+t
+java:S2293v"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+R	java:S125Â"<This block of commented-out lines of code should be removed.(­¹ð
+r
+java:S3923ï"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ðÃÕ“
+D
+java:S1481ß"-Remove this unused "download" local variable.(ªù¤Ë
+Q	java:S125`"<This block of commented-out lines of code should be removed.(ƒ¿”„
+H
+java:S1481r"-Remove this unused "POJOlist" local variable.(Û¼øÈýÿÿÿÿ
+N
+java:S1135Þ"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+p
+java:S1128"ZRemove this unused import 'com.suguna.lbsalesperson.Adapter.ListViewAdapter_ordersummary'.(èó©÷
+Q	java:S125q"<This block of commented-out lines of code should be removed.(à£í¿
+c	java:S100Z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½º¡
+N
+java:S1135‘"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+9
+java:S1659â""Declare "TKEY" on a separate line.(¾ð¥¨
+c	java:S101¼"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Èä‚Ž
+V	java:S125~"<This block of commented-out lines of code should be removed.(¯–¢Øþÿÿÿÿ
+N
+java:S1135´"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+f	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ð¥¨
+V	java:S125s"<This block of commented-out lines of code should be removed.(ÀÊ—÷ýÿÿÿÿ
+3
+java:S1116†"Remove this empty statement.(¯¸—®
+8
+java:S1659F""Declare "TKEY" on a separate line.(¾ð¥¨
+N
+java:S1135—"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+u
+java:S2293å"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+t
+java:S2293r"YReplace the type specification in this constructor call with the diamond operator ("<>").(Û¼øÈýÿÿÿÿ
+g	java:S117â"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ð¥¨
+=
+java:S16591"'Declare "emptyText" on a separate line.(÷äœ™
+V	java:S125V"<This block of commented-out lines of code should be removed.(óì´üÿÿÿÿ
+|	java:S1163"bRename this field "Ministatement_POJOlist1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÅÖþÿÿÿÿ
+Q	java:S125x"<This block of commented-out lines of code should be removed.(ƒ¿”„
+n	java:S115,"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(„áÎ]
+n	java:S116/"ZRename this field "list_dailyprice" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âþ©%
+k	java:S117r"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¼øÈýÿÿÿÿ
+W
+java:S1854r"<Remove this useless assignment to local variable "POJOlist".(Û¼øÈýÿÿÿÿ
+o	java:S115*"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(—­öë
+f	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ð¥¨
+t	java:S115+"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡¿¾Øûÿÿÿÿ
+h	java:S100h"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è‘Àáÿÿÿÿÿ
+u
+java:S2293‚"YReplace the type specification in this constructor call with the diamond operator ("<>").(©Ìïèûÿÿÿÿ
+s	java:S1168"YRename this field "OrderSales_DAO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´²²‘ýÿÿÿÿ
+d	java:S100³"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Þ™¿
+W	java:S125ˆ"<This block of commented-out lines of code should be removed.(±×¿ÿþÿÿÿÿ
+U
+java:S1155ï">Use isEmpty() to check whether the collection is empty or not.(ðÃÕ“
+2
+java:S3626«"Remove this redundant jump.(ûÁÝ…
+{	java:S1162"aRename this field "Ministatement_POJOlist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸Ò¾—þÿÿÿÿ

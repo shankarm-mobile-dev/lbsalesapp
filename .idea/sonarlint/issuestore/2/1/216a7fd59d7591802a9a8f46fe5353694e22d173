@@ -1,0 +1,23 @@
+
+j
+java:S3008	"TRename this field "TYPE_WIFI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ξ©η©
+t
+java:S1104"^Make TYPE_NOT_CONNECTED a static final constant or non-public and provide accessors if needed.(έ΅
+E
+java:S1444	"/Make this "public static TYPE_WIFI" field final(ξ©η©
+s
+java:S3008"]Rename this field "TYPE_NOT_CONNECTED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(έ΅
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(πόÿ
+l
+java:S3008
+"VRename this field "TYPE_MOBILE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿμζ
+m
+java:S1104
+"WMake TYPE_MOBILE a static final constant or non-public and provide accessors if needed.(ÿμζ
+k
+java:S1104	"UMake TYPE_WIFI a static final constant or non-public and provide accessors if needed.(ξ©η©
+G
+java:S1444
+"1Make this "public static TYPE_MOBILE" field final(ÿμζ
+N
+java:S1444"8Make this "public static TYPE_NOT_CONNECTED" field final(έ΅

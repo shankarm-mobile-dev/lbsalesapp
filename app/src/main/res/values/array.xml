@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="menu_image">
+        <item>@drawable/price_list_2</item>
+        <item>@drawable/order_summar_2</item>
+        <item>@drawable/outstanding_22</item>
+        <item>@drawable/feedbacknew</item>
+        <item>@drawable/branch_allocation</item>
+        <item>@drawable/farmallocation</item>
+        <item>@drawable/target_acheive</item>
+        <item>@drawable/today_target</item>
+        <item>@drawable/price_allocation</item>
+        <item>@drawable/price_allocation</item>
+        <item>@drawable/customer_club</item>
+        <item>@drawable/order_summar_2</item>
+        <item>@drawable/otp_icon</item>
+        <item>@drawable/order_summar_2</item>
+        <item>@drawable/order_summar_2</item>
+
+    </integer-array>
+    <string-array name="menu_title">
+        <item>@string/label_price_list</item>
+        <item>@string/label_order_summary</item>
+        <item>@string/label_outStanding</item>
+        <item>@string/label_feedback</item>
+        <item>@string/label_branch_allocation</item>
+        <item>@string/label_farm_allocation</item>
+        <item>@string/label_target_vs_achieved</item>
+        <item>@string/label_today_target</item>
+        <item>@string/label_diff_price_declaration</item>
+        <item>@string/label_price_declaration</item>
+        <item>@string/label_customer_club</item>
+        <item>@string/label_order_status</item>
+        <item>@string/label_liftotp_view</item>
+        <item>@string/label_exceptipn_order</item>
+        <item>@string/label_book_order_view</item>
+    </string-array>
+
+</resources>

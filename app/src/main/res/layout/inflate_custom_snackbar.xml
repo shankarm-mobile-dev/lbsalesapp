@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:id="@+id/inflate_snackbar_layout"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:padding="7.5dp"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/inflate_snackbar_image"
+            android:layout_width="24dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_close_icon"
+            android:layout_height="24dp"/>
+
+    <TextView
+            android:id="@+id/inflate_snackbar_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            style="@style/AppTitle"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

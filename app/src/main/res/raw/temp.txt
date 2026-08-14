@@ -1,0 +1,132 @@
+ Company Name: SUGUNA FOODS PRIVATE LIMITED                            FARMER BATCH ACCOUNT LEDGER                       Report Date :  20-JUN-2017
+                                                                                                                         Status      :  WORK IN PROCESS
+ Region      : Rajasthan                                           F072187 - MAHENDRA SINGH PF,TUMLI K                   Page No     :  1     Of  2
+ Branch      : R07:BAGRU-BR-RJ                                               Batch No  : 885                             Printed By  :  01027149
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ Supplier Unit   Sup.Ref No   Shipment Date  Our Ref.No. Receipt Date Material Description                   Quantity UOM  Cost Per Unit    Total Value
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ CHICKS
+ RH4:AJMEER-HY-RJ
+                 426050049    30-APR-2017    6356        30-APR-2017  BROILER DAY OLD CHICK                   5100.00 EACH         21.50      109650.00
+                                                                      Total                                   5100.00                         109650.00
+ Transfers
+ Transfer In                                                                                                                                       0.00
+ Transfer Out                                                                                                                                      0.00
+                                                                      Total                                                                        0.00
+ CHICKS ISO Out
+
+ --------------------------------------------------------------------------------------------------------------------------------------------------------
+ FEED / VACCINE
+ Receipts from Feed Mill / Outside / Hatchery
+ R02:JAIPUR-BR-RJ
+                 426050750    28-MAY-2017    6659        30-MAY-2017  BROILER FINISHER PELLET 060                9.00 BAG          30.00       16200.00
+ RF2:PALSANA-FD-RJ
+                 426049849    25-APR-2017    6251        25-APR-2017  BROILER PRE STARTER CRUMBLE 060           24.00 BAG          30.00       43200.00
+                 426049849    25-APR-2017    6251        25-APR-2017  BROILER STARTER CRUMBLE 060               10.00 BAG          30.00       18000.00
+                 426050146    06-MAY-2017    6383        06-MAY-2017  BROILER STARTER CRUMBLE 060               20.00 BAG          30.00       36000.00
+                 426050217    11-MAY-2017    6437        11-MAY-2017  BROILER STARTER CRUMBLE 060               20.00 BAG          30.00       36000.00
+                 426050339    15-MAY-2017    6460        15-MAY-2017  BROILER STARTER CRUMBLE 060               18.00 BAG          30.00       32400.00
+                 426050339    15-MAY-2017    6460        15-MAY-2017  BROILER STARTER PELLET2 060               64.00 BAG          30.00      115200.00
+                 426050614    27-MAY-2017    6592        27-MAY-2017  BROILER STARTER PELLET2 060                4.00 BAG          30.00        7200.00
+                 426050614    27-MAY-2017    6592        27-MAY-2017  BROILER FINISHER PELLET 060               46.00 BAG          30.00       82800.00
+                 426050771    01-JUN-2017    6669        01-JUN-2017  BROILER FINISHER PELLET 060               40.00 BAG          30.00       72000.00
+                                                                      Total                                    255.00                         459000.00
+ Transfer In :
+
+ BHANWAR SINGH PF,MANASAR     31-MAY-2017    731570441   31-MAY-2017  BROILER STARTER PELLET2 060               12.00 BAG          30.00           0.00
+                                                                      Total                                     12.00
+ Transfer Out :
+
+ MEERA DEVI PF,SAMBHARIYA      13-JUN-2017   737922197   13-JUN-2017  BROILER FINISHER PELLET 060               16.00  BAG          30.00            0.00
+ PAWAN PF, SONAR               31-MAY-2017   731592717   31-MAY-2017  BROILER FINISHER PELLET 060                9.00  BAG          30.00            0.00
+                                                                      Total                                     25.00
+ Feed Consumption Details :
+ Type            Item Description                        UOM     Consumption Quantity(Bags)
+ Feed
+                 BROILER PRE STARTER CRUMBLE 060         Bag                             24
+                 BROILER STARTER CRUMBLE 060             Bag                             68
+                 BROILER STARTER PELLET2 060             Bag                             80
+                 BROILER FINISHER PELLET 060             Bag                             70
+                                                                      Total             242
+ FARM STOCK :
+ Item Code       Item Description                        Uom           Stock Quantity(Bags)
+ MEDICINE Issue
+ BAGRU-BR-RJ     5035          12-MAY-2017   326712      N/A          NEFROTEC 5 LTR VET LIQUID                1.00  EA          977.50          977.50
+ BAGRU-BR-RJ     5035          12-MAY-2017   326712      N/A          F STRAIN WITH DILUENT 1000 DOSES         5.00  EA           52.79          263.95
+                                                                      GLOBIVAC
+ BAGRU-BR-RJ     5035          12-MAY-2017   326712      N/A          POULTRY FEED SUPPLEMENT - SUGI           2.00  KG          159.00          318.00
+                                                                      RENACARE POWDER
+ BAGRU-BR-RJ     5035          12-MAY-2017   326712      N/A          LEVOFLOX L                               2.00  LTR         469.00          938.00
+ Return
+
+                                                                      Total                                                                     2497.45
+
+
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ Company Name: SUGUNA FOODS PRIVATE LIMITED                            FARMER BATCH ACCOUNT LEDGER                       Report Date :  20-JUN-2017
+                                                                                                                         Status      :  WORK IN PROCESS
+ Region      : Rajasthan                                           F072187 - MAHENDRA SINGH PF,TUMLI K                   Page No     :  2     Of  2
+ Branch      : R07:BAGRU-BR-RJ                                               Batch No  : 885                             Printed By  :  01027149
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ Supplier Unit   Sup.Ref No   Shipment Date  Our Ref.No. Receipt Date Material Description                   Quantity UOM  Cost Per Unit    Total Value
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------
+ BIRDS SALES :
+ Customer                             Delivery  Manual              Manual          Age   Avg.Wt  Qty-Nos    Qty-Kgs UOM           Rate          Amount
+                                      No.       DC No.              DC.Date
+ MYCKLE MEAT SHOP,JAIPUR              17484473  018304              06-JUN-2017      37    1.670      400     668.00 KG           82.00        54776.00
+ AAMIR KHAN                           17484119  019044              06-JUN-2017      37    1.751      732    1282.00 KG           82.00       105124.00
+ VEER CHICKEN'S - JAIPUR              17485015  019045              06-JUN-2017      37    1.582      900    1424.00 KG           81.00       115344.00
+ AMRIT TRADERS JAMDOLI                17484157  0183303             06-JUN-2017      37    1.644      720    1184.00 KG           82.00        97088.00
+ RAMESHWAR POULTRY AND TRADING        17484102  019043              06-JUN-2017      37    1.680     1080    1814.00 KG           82.00       148748.00
+ NADEEM QURESHI, NAGAUR               17489789  19444               07-JUN-2017      38    1.624      420     682.00 KG           84.00        57288.00
+ FOJI BHAI,JAIPUR                     17527716  018460              12-JUN-2017      43    0.982      387     380.00 KG           51.00        19380.00
+
+ Stock Transfer out
+
+                                                                      Total                1.603     4639    7434.00              80.41       597748.00
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+ BIRDS STOCK :
+ Housed:5100                      Mortality: 461             First Week Mortality:5              Sold Nos:  4639                  Balance:    0.00
+
+ Placement gap days :  21         No. of Farm Visits :  14
+
+ Note: For If any Chick, Feed Receipt is not view in the report ,Kindly check the Batch Start date and Completed Date and Refer the Material
+ Transactions, Transaction Summaries.
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                  Farmer Signature                                                                         Branch Manager Signature
+
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------

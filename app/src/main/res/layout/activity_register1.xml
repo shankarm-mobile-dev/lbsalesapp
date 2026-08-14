@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+
+    >
+
+
+
+    <LinearLayout
+
+        android:orientation="vertical"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <ImageView
+
+            android:layout_weight="4"
+
+            android:src="@drawable/ic_login"
+
+            android:scaleType="centerCrop"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp" />
+
+        <View
+
+            android:layout_weight="1"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="0dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+
+        android:gravity="center"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_margin="?actionBarSize"
+
+
+
+            android:text=" SignUp"
+
+            android:textColor="#fff"
+
+            android:textSize="@dimen/txt_login_headsize"
+
+            android:textStyle="bold" />
+
+
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/txt_login_editsize"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+
+            android:textSize="@dimen/txt_login_textsize"
+            android:paddingLeft="60dp"
+            android:text=""
+            android:hint="Employee code"
+            android:inputType="number"
+            android:textColor="@color/colorText"
+            android:background="@drawable/bg_txt_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Button
+            android:id="@+id/btn_submit1"
+            android:paddingRight="20dp"
+
+            android:paddingLeft="20dp"
+
+            android:background="@drawable/round_corner_buttom"
+            android:visibility="gone"
+            android:text="sign in"
+
+            android:textColor="#777"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="35dp" />
+
+
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="14dp"
+
+            android:text=""
+            android:textSize="32px"
+            android:textColor="#fff"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+
+        <LinearLayout
+
+
+
+            android:gravity="right|center"
+
+            android:orientation="horizontal"
+
+            android:layout_alignParentBottom="true"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="Submit"
+                android:textSize="@dimen/txt_login_bigbottom"
+                android:layout_gravity="center"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="86dp"
+                android:layout_height="86dp"
+                android:layout_marginStart="8dp"
+
+                android:layout_marginEnd="35dp"
+                android:background="@drawable/bg_btn_login"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintHorizontal_bias="0.951"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+
+        android:layout_marginBottom="20dp"
+
+        android:gravity="center"
+
+        android:orientation="horizontal"
+
+        android:layout_alignParentBottom="true"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

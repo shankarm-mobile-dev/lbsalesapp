@@ -1,0 +1,14 @@
+
+u	java:S116"`Rename this field "lyt_customer_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„
+h	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚ÖíÄúÿÿÿÿ
+r	java:S116"]Rename this field "lyt_sales_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„
+j
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÏÈŒõ
+I
+java:S1659"3Declare "lyt_customer_hierachy" on a separate line.(Î†õ„
+G
+java:S1659"1Declare "lyt_branch_hierachy" on a separate line.(Î†õ„
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×û™§
+1
+java:S3626A"Remove this redundant jump.(ûÁÝ…
+s	java:S116"^Rename this field "lyt_branch_hierachy" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î†õ„

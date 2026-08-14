@@ -1,0 +1,9 @@
+
+nkotlin:S100u"PRename function "popup_save" to match the regular expression ^[a-z][a-zA-Z0-9]*$(©©„ş8¯Âëò§.
+Hkotlin:S1481@")Remove this unused "TKEY" local variable.(ëı›ó8¯Âëò§.
+pkotlin:S117@"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(ëı›ó8¯Âëò§.
+{kotlin:S1006"XRename function "On_FieldDeclartion" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ºòáëşÿÿÿÿ8¯Âëò§.
+pkotlin:S117?"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(Ïö±º8¯Âëò§.
+ukotlin:S117<"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(·Œê„úÿÿÿÿ8¯Âëò§.
+Bkotlin:S1250"Remove this commented out code.(ŸÔ‘Âÿÿÿÿÿ8¯Âëò§.
+pkotlin:S100]"SRename function "On_FieldClick" to match the regular expression ^[a-z][a-zA-Z0-9]*$(Õ…Ï~8¯Âëò§.
