@@ -10,248 +10,239 @@ import android.widget.Switch
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.suguna.lbsalesperson.R
-
 import com.suguna.lbsalesperson.Utils.AppDialogs
 import com.suguna.lbsalesperson.bookOrdersView.bookOrderViewActivity
 import com.suguna.lbsalesperson.bookOrdersView.model.BookOrderOtpModel
 import com.truelife.http.Response
 import com.truelife.http.ResponseListener
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 class bookorderRecyclerAdapter (
     private val myContext: Context,
     private val mData: ArrayList<BookOrderOtpModel>
-) : RecyclerView.Adapter<bookorderRecyclerAdapter.ViewHolder>(), ResponseListener {
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>(), ResponseListener {
+
+    companion object {
+        private const val TYPE_HEADER = 0
+        private const val TYPE_ITEM = 1
+        private const val TYPE_FOOTER = 2
+        private const val CLUSTER_OTHERS = "Others"
+    }
+
+    private val displayList: ArrayList<DisplayItem> = arrayListOf()
 
     var currentPosition: Int = -1
 
     lateinit var btnShowBottomSheet: Button
     var isViewOrAllocate = "0"
+
+    init {
+        buildDisplayList()
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return displayList[position].type
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ViewHolder {
-        val v = LayoutInflater.from(myContext)
-            .inflate(R.layout.inflate_bookorderview_adapter_item, parent, false)
-        return ViewHolder(v)
+    ): RecyclerView.ViewHolder {
+        return when (viewType) {
+            TYPE_HEADER -> {
+                val v = LayoutInflater.from(myContext)
+                    .inflate(R.layout.inflate_bookorderview_cluster_header, parent, false)
+                HeaderViewHolder(v)
+            }
+            TYPE_FOOTER -> {
+                val v = LayoutInflater.from(myContext)
+                    .inflate(R.layout.inflate_bookorderview_cluster_footer, parent, false)
+                FooterViewHolder(v)
+            }
+            else -> {
+                val v = LayoutInflater.from(myContext)
+                    .inflate(R.layout.inflate_bookorderview_adapter_item, parent, false)
+                ItemViewHolder(v)
+            }
+        }
     }
 
     @SuppressLint("NewApi")
     override fun onBindViewHolder(
-        aHolder: ViewHolder,
+        holder: RecyclerView.ViewHolder,
         position: Int
     ) {
-
-        aHolder.branch_tv.text = mData.get(position).locationName
-        aHolder.customername_tv.text = mData.get(position).availableKg
-        aHolder.vehicleno_tv.text=mData.get(position).bookedKg
-        aHolder.farmerotp_tv.text=mData.get(position).bookedKg
-        aHolder.customerotp_tv.text=mData.get(position).bookedKgPer
-        aHolder.status_tv.text=mData.get(position).closeOrder
-        aHolder.itemView.setOnClickListener() {
-            //getbottomsheet(mData.get(position))
+        val item = displayList[position]
+        when (holder) {
+            is HeaderViewHolder -> {
+                holder.clusterNameTv.text = item.clusterName
+            }
+            is FooterViewHolder -> {
+                holder.totalLabelTv.text = item.clusterName + " Total"
+                holder.totDeclareTv.text = item.totDeclared.toString()
+                holder.totBookedTv.text = item.totBooked.toString()
+                holder.totPercentTv.text = item.totPercent
+            }
+            is ItemViewHolder -> bindItem(holder, item.order!!)
         }
-        if(mData.get(position).closeOrder.equals("1"))
-        {
-            aHolder.mySwitch.isChecked = true
+    }
 
+    private fun bindItem(aHolder: ItemViewHolder, data: BookOrderOtpModel) {
+        aHolder.branch_tv.text = data.locationName
+        aHolder.customername_tv.text = data.availableKg
+        aHolder.vehicleno_tv.text = data.bookedKg
+        aHolder.farmerotp_tv.text = data.bookedKg
+        aHolder.customerotp_tv.text = data.bookedKgPer
+        aHolder.status_tv.text = data.closeOrder
+        aHolder.itemView.setOnClickListener {
+            //getbottomsheet(data)
         }
-        if(mData.get(position).priceStop.equals("1"))
-        {
-            aHolder.mySwitch_price.isChecked = true
 
-        }
-        if(mData.get(position).priceDowntrent.equals("1"))
-        {
-            aHolder.mySwitch_pricestop.isChecked = true
-          //  aHolder.mySwitch_pricestop.setChecked(true);   // or false
-        //    aHolder.mySwitch_pricestop.setEnabled(false);  // lock it
+        aHolder.mySwitch.setOnCheckedChangeListener(null)
+        aHolder.mySwitch_price.setOnCheckedChangeListener(null)
+        aHolder.mySwitch_pricestop.setOnCheckedChangeListener(null)
 
-        }
+        aHolder.mySwitch.isChecked = data.closeOrder.equals("1")
+        aHolder.mySwitch_price.isChecked = data.priceStop.equals("1")
+        aHolder.mySwitch_pricestop.isChecked = data.priceDowntrent.equals("1")
 
         aHolder.mySwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // ON
                 aHolder.mySwitch.isChecked = false
                 (myContext as bookOrderViewActivity).update_bookorderList(
-                    mData.get(position).branchCode,
+                    data.branchCode,
                     "Y",
-                    mData.get(position).locationName
+                    data.locationName
                 )
             } else {
-                // OFF
                 aHolder.mySwitch.isChecked = true
                 (myContext as bookOrderViewActivity).update_bookorderList(
-                    mData.get(position).branchCode,
+                    data.branchCode,
                     "N",
-                    mData.get(position).locationName
+                    data.locationName
                 )
             }
         }
 
         aHolder.mySwitch_price.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // ON
                 aHolder.mySwitch_price.isChecked = false
                 (myContext as bookOrderViewActivity).update_pricestopList(
-                    mData.get(position).branchCode,
+                    data.branchCode,
                     "Y",
-                    mData.get(position).locationName
+                    data.locationName
                 )
             } else {
-                // OFF
                 aHolder.mySwitch_price.isChecked = true
                 (myContext as bookOrderViewActivity).update_pricestopList(
-                    mData.get(position).branchCode,
+                    data.branchCode,
                     "N",
-                    mData.get(position).locationName
+                    data.locationName
                 )
             }
         }
         aHolder.mySwitch_pricestop.setOnCheckedChangeListener { _, isChecked ->
-            if(mData.get(position).priceDowntrent.equals("0")) {
-                if(mData.get(position).priceDeclared.equals("0")) {
+            if (data.priceDowntrent.equals("0")) {
+                if (data.priceDeclared.equals("0")) {
                     if (isChecked) {
-                        // ON
                         aHolder.mySwitch_pricestop.isChecked = false
                         (myContext as bookOrderViewActivity).update_downtrendList(
-                            mData.get(position).branchCode,
+                            data.branchCode,
                             "Y",
-                            mData.get(position).locationName
+                            data.locationName
                         )
                     } else {
-                        // OFF
                         aHolder.mySwitch_pricestop.isChecked = true
                         (myContext as bookOrderViewActivity).update_downtrendList(
-                            mData.get(position).branchCode,
+                            data.branchCode,
                             "N",
-                            mData.get(position).locationName
+                            data.locationName
                         )
                     }
-                }
-                else
-                {
+                } else {
                     aHolder.mySwitch_pricestop.isChecked = true
                     AppDialogs.showToastshort(myContext, "Price is already Declared to this branch.")
                 }
-            }
-            else
-            {
+            } else {
                 aHolder.mySwitch_pricestop.isChecked = true
                 AppDialogs.showToastshort(myContext, "Price Down trend is Enabled already.")
             }
         }
-        aHolder.setIsRecyclable(false);
+        aHolder.setIsRecyclable(false)
     }
+
     @SuppressLint("NotifyDataSetChanged")
     fun refreshList(newList: ArrayList<BookOrderOtpModel>) {
         mData.clear()
         mData.addAll(newList)
+        buildDisplayList()
         notifyDataSetChanged()
     }
 
-   /* private fun getbottomsheet(data: ExceptionOtpModel) {
-        val dialog = BottomSheetDialog(myContext)
-        val view = LayoutInflater.from(myContext)
-            .inflate(R.layout.inflate_exceptionview_bottom_sheet, null)
-        val BtnCancel = view.findViewById<Button>(R.id.idBtnCancel)
-        val BtnApprove = view.findViewById<Button>(R.id.idBtnApprove)
-        val orderno_tv = view.findViewById<TextView>(R.id.orderno_tv)
-        val custname_tv = view.findViewById<TextView>(R.id.custname_tv)
-        val farm_tv = view.findViewById<TextView>(R.id.farm_tv)
-        val profile_tv = view.findViewById<TextView>(R.id.profile_tv)
-        val custbalance_tv = view.findViewById<TextView>(R.id.custbalance_tv)
-        val bodywt_tv = view.findViewById<TextView>(R.id.bodywt_tv)
-        val distance_tv = view.findViewById<TextView>(R.id.distance_tv)
-        val price_tv= view.findViewById<TextView>(R.id.price_tv)
-        val orderqty_tv= view.findViewById<TextView>(R.id.orderqty_tv)
-        val lastwk_tv= view.findViewById<TextView>(R.id.lastwk_tv)
-
-        val exceedpct_tv= view.findViewById<TextView>(R.id.exceedpct_tv)
-        val edit_quantity= view.findViewById<EditText>(R.id.edit_quantity)
-        val edit_reason= view.findViewById<EditText>(R.id.edit_reason)
-        val lyt_hide= view.findViewById<LinearLayout>(R.id.lyt_hide)
-        val approved_tv= view.findViewById<TextView>(R.id.approved_tv)
-        if(!data.sTATUS.equals("Waiting for confirmation"))
-        {
-            lyt_hide.visibility= View.GONE
-            approved_tv.visibility= View.VISIBLE
-
+    private fun buildDisplayList() {
+        displayList.clear()
+        val grouped = LinkedHashMap<String, ArrayList<BookOrderOtpModel>>()
+        mData.forEach { row ->
+            val key = row.clusterName?.trim().orEmpty().ifEmpty { CLUSTER_OTHERS }
+            grouped.getOrPut(key) { arrayListOf() }.add(row)
         }
-        approved_tv.text = data.aPPROVED_QTY
-        orderno_tv.text = data.refNo
-        custname_tv.text = data.customerNumber +" - "+ data.customerName
-        farm_tv.text = data.farmCode +" - "+ data.farmName
-        profile_tv.text = data.pROFILE_CLASS
-        custbalance_tv.text = data.cUSTOMER_BALANCE
-        bodywt_tv.text = data.aPPROX_BODY_WEIGHT
-        distance_tv.text = data.dISTANCE
-        price_tv.text = data.pRICE
-        orderqty_tv.text = data.totalQty
-        lastwk_tv.text = data.lAST_5WK_AVG
-        exceedpct_tv.text=data.eXCEED_PCT
-        BtnCancel.setOnClickListener {
-            if(edit_reason.text.toString().trim().equals(""))
-            {
-                Toast.makeText(myContext,"Enter remark", Toast.LENGTH_SHORT).show()
+        grouped.forEach { (cluster, rows) ->
+            displayList.add(DisplayItem(TYPE_HEADER, clusterName = cluster))
+            var totDeclared = 0
+            var totBooked = 0
+            rows.forEach { row ->
+                displayList.add(DisplayItem(TYPE_ITEM, order = row))
+                totDeclared += parseQty(row.availableKg)
+                totBooked += parseQty(row.bookedKg)
             }
-            else
-            {
-
-                (myContext as exceptionViewActivity).update_exceptionList(
-                    data.refNo,
-                    edit_quantity.text.toString().trim(),
-                    edit_reason.text.toString().trim(),
-                    "R"
+            displayList.add(
+                DisplayItem(
+                    TYPE_FOOTER,
+                    clusterName = cluster,
+                    totDeclared = totDeclared,
+                    totBooked = totBooked,
+                    totPercent = bookedPercent(totDeclared, totBooked)
                 )
-
-                dialog.dismiss()
-            }
+            )
         }
-        BtnApprove.setOnClickListener {
-            if(edit_quantity.text.toString().trim().equals(""))
-            {
-                Toast.makeText(myContext,"Enter Approve Quantity", Toast.LENGTH_SHORT).show()
-            }
-            else if(Integer.parseInt(edit_quantity.text.toString()) <= 0)
-            {
-                Toast.makeText(myContext,"Enter Approve Quantity", Toast.LENGTH_SHORT).show()
-            }
-            else if(Integer.parseInt(edit_quantity.text.toString()) > Integer.parseInt(data.totalQty))
-            {
-                Toast.makeText(myContext,"Enter Approve Quantity is greater than order quantity",
-                    Toast.LENGTH_SHORT).show()
-            }
-            else if(edit_reason.text.toString().trim().equals(""))
-            {
-                Toast.makeText(myContext,"Enter remark", Toast.LENGTH_SHORT).show()
-            }
-            else
-            {
-                var status="P"
-                if(edit_quantity.text.toString().trim().equals(data.totalQty))
-                {
-                    status="A"
-                }
-                (myContext as exceptionViewActivity).update_exceptionList(
-                    data.refNo,
-                    edit_quantity.text.toString().trim(),
-                    edit_reason.text.toString().trim(),
-                    status
-                )
-                dialog.dismiss()
-            }
-        }
-        dialog.setCancelable(true)
-        dialog.setContentView(view)
-        dialog.show()
-
-    }*/
-
-    override fun getItemCount(): Int {
-        return mData.size
     }
 
-    inner class ViewHolder constructor(aView: View) :
+    private fun parseQty(value: String?): Int {
+        if (value.isNullOrBlank()) return 0
+        return try {
+            value.toDouble().toInt()
+        } catch (e: Exception) {
+            0
+        }
+    }
+
+    private fun bookedPercent(declared: Int, booked: Int): String {
+        if (declared <= 0) return "0.00"
+        val totBookedPer = (booked.toFloat() / declared.toFloat()) * 100
+        return BigDecimal(totBookedPer.toDouble())
+            .setScale(2, RoundingMode.HALF_UP)
+            .toString()
+    }
+
+    override fun getItemCount(): Int {
+        return displayList.size
+    }
+
+    inner class HeaderViewHolder constructor(aView: View) :
+        RecyclerView.ViewHolder(aView) {
+        val clusterNameTv: TextView = aView.findViewById(R.id.cluster_name_tv)
+    }
+
+    inner class FooterViewHolder constructor(aView: View) :
+        RecyclerView.ViewHolder(aView) {
+        val totalLabelTv: TextView = aView.findViewById(R.id.cluster_total_label_tv)
+        val totDeclareTv: TextView = aView.findViewById(R.id.cluster_tot_declare_qty)
+        val totBookedTv: TextView = aView.findViewById(R.id.cluster_tot_booked_qty)
+        val totPercentTv: TextView = aView.findViewById(R.id.cluster_tot_booked_per)
+    }
+
+    inner class ItemViewHolder constructor(aView: View) :
         RecyclerView.ViewHolder(aView) {
 
         val branch_tv: TextView
@@ -265,19 +256,26 @@ class bookorderRecyclerAdapter (
         val mySwitch_pricestop: Switch
 
         init {
-
             branch_tv = aView.findViewById<View>(R.id.branch_tv) as TextView
             customername_tv = aView.findViewById<View>(R.id.customername_tv) as TextView
             vehicleno_tv = aView.findViewById<View>(R.id.vehicleno_tv) as TextView
             farmerotp_tv = aView.findViewById<View>(R.id.farmerotp_tv) as TextView
             customerotp_tv = aView.findViewById<View>(R.id.customerotp_tv) as TextView
             status_tv = aView.findViewById<View>(R.id.status_tv) as TextView
-             mySwitch = aView.findViewById<View>(R.id.mySwitch) as Switch
-            mySwitch_price= aView.findViewById<View>(R.id.mySwitch_price) as Switch
-            mySwitch_pricestop= aView.findViewById<View>(R.id.mySwitch_pricesstop) as Switch
-
+            mySwitch = aView.findViewById<View>(R.id.mySwitch) as Switch
+            mySwitch_price = aView.findViewById<View>(R.id.mySwitch_price) as Switch
+            mySwitch_pricestop = aView.findViewById<View>(R.id.mySwitch_pricesstop) as Switch
         }
     }
+
+    private data class DisplayItem(
+        val type: Int,
+        val order: BookOrderOtpModel? = null,
+        val clusterName: String? = null,
+        val totDeclared: Int = 0,
+        val totBooked: Int = 0,
+        val totPercent: String = ""
+    )
 
     override fun onResponse(r: Response?) {
         AppDialogs.hideProgressDialog()

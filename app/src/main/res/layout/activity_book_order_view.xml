@@ -437,9 +437,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:gravity="center_vertical"
-            android:scrollbars="none"
+            android:scrollbars="vertical"
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
@@ -458,7 +459,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@color/grey_bg_light"
+                    android:background="@color/green_bg_light"
                     android:orientation="horizontal"
                     android:padding="5dp"
                     android:weightSum="7">
@@ -478,9 +479,9 @@
 
                             android:padding="5dp"
                             android:textSize="12sp"
-                            android:text="Total"
+                            android:text="Region Total"
 
-                            android:textColor="@color/black"
+                            android:textColor="@color/colorPrimary"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -495,7 +496,7 @@
                         android:gravity="center|right"
                         android:text=""
                         android:textSize="12sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                     <TextView
                         android:id="@+id/tot_booked_qty"
@@ -508,7 +509,7 @@
                         android:gravity="center|right"
                         android:text=""
                         android:textSize="12sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/colorPrimary"
                         android:textStyle="bold" />
                     <LinearLayout
                         android:layout_width="0dp"
@@ -527,7 +528,7 @@
                             android:padding="5dp"
                             android:textSize="12sp"
                             android:text=""
-                            android:textColor="@color/black"
+                            android:textColor="@color/colorPrimary"
                             android:textStyle="bold" />
                         <TextView
 
