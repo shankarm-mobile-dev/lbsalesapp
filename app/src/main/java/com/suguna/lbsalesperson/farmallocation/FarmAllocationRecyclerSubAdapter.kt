@@ -23,6 +23,7 @@ import com.suguna.lbsalesperson.feedback.activity.FeedBackActivity
 import com.truelife.api.AppServices
 import com.truelife.http.Response
 import com.truelife.http.ResponseListener
+import org.json.JSONArray
 import org.json.JSONObject
 
 class FarmAllocationRecyclerSubAdapter(
@@ -53,6 +54,7 @@ class FarmAllocationRecyclerSubAdapter(
     val aProductcatList = arrayListOf<String>()
     val aCancelresionList = arrayListOf<String>()
     var selectedPosition = -1
+    private val reasonWsWronglyAllocated = "WS Wrongly Allocated"
 
     override fun onCreateViewHolder(
             parent: ViewGroup,
@@ -887,6 +889,73 @@ if(!PREFAVGWT.equals("0"))
     }
     }
 
+    private fun confirmAndCancelAllocation(reason: String, resubmitItems: JSONArray? = null) {
+        AppDialogs.customDoubleAction(myContext, "", "Are you sure want to Cancel this farm allocation ?", "Yes",
+            "No", object : AppDialogs.OptionListener {
+                override fun no() {
+
+                }
+
+                override fun yes() {
+                    adapter.cancelOrderreason(
+                        mParentObj.headerID,
+                        reason,
+                        mData.get(selectedPosition).detaillineId,
+                        resubmitItems
+                    )
+                }
+            }, true, false)
+    }
+
+    private fun promptNewWsNameThenCancel(reason: String) {
+        if (selectedPosition < 0 || selectedPosition >= mData.size) {
+            AppDialogs.showToastshort(myContext, "Unable to capture WS name")
+            return
+        }
+        val currentWsCode = mData.get(selectedPosition).supervisorCode.trim()
+        aSupervisorNameList.clear()
+        mSupervosirList.forEach {
+            aSupervisorNameList.add(it.EMP_NO + " - " + it.EMP_NAME)
+        }
+        if (mSupervosirList.size == 0) {
+            AppDialogs.customOkAction(myContext, "Alert", "Supervisor not available.", "Ok", object : AppDialogs.ConfirmListener {
+                override fun yes() {
+
+                }
+            }, false)
+            return
+        }
+        AppDialogs.showSingleChoice(myContext, "Choose WS Name", aSupervisorNameList, object : SingleChoiceAdapter.Callback {
+            override fun info(pos: Int, text: String) {
+                AppDialogs.hideSingleChoice()
+                var selectedSup: FarmAllocationModel.Supervisor? = null
+                mSupervosirList.forEach {
+                    if ((it.EMP_NO + " - " + it.EMP_NAME).equals(text, true)) {
+                        selectedSup = it
+                        return@forEach
+                    }
+                }
+                if (selectedSup == null) {
+                    AppDialogs.showToastshort(myContext, "Please select WS name")
+                    return
+                }
+                if (selectedSup!!.EMP_NO.trim().equals(currentWsCode, true)) {
+                    AppDialogs.showToastshort(myContext, "Please select a different WS name")
+                    promptNewWsNameThenCancel(reason)
+                    return
+                }
+                updateSupervisor(
+                    selectedPosition,
+                    selectedSup!!.EMP_NO,
+                    selectedSup!!.MOBILENO,
+                    selectedSup!!.EMP_NAME
+                )
+                val resubmitItems = adapter.buildSubmitItemsForRow(mData.get(selectedPosition), this@FarmAllocationRecyclerSubAdapter.pos)
+                confirmAndCancelAllocation(reason, resubmitItems)
+            }
+        }, true, true)
+    }
+
     private fun cancelreasonemp(lineId: String, detaillineId: String) {
         AppDialogs.showProgressDialog(myContext)
 
@@ -965,24 +1034,11 @@ if(!PREFAVGWT.equals("0"))
                     AppDialogs.showSingleChoice(myContext, "Choose Cancel Reason", aCancelresionList, object : SingleChoiceAdapter.Callback {
                         override fun info(pos: Int, text: String) {
                             AppDialogs.hideSingleChoice()
-                            //adapter.cancelOrderreason(mParentObj.headerID,text)
-                            AppDialogs.customDoubleAction(myContext, "", "Are you sure want to Cancel this farm allocation ?", "Yes",
-                                "No", object : AppDialogs.OptionListener {
-                                    override fun no() {
-
-                                    }
-
-                                    override fun yes() {
-
-
-                                        adapter.cancelOrderreason(mParentObj.headerID,text, mData.get(selectedPosition).detaillineId)
-
-
-                                    }
-
-
-                                }, true, false)
-
+                            if (text.trim().equals(reasonWsWronglyAllocated, true)) {
+                                promptNewWsNameThenCancel(text.trim())
+                            } else {
+                                confirmAndCancelAllocation(text)
+                            }
                         }
                     }, true, true)
                 } else {

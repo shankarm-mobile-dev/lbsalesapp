@@ -43,6 +43,8 @@ class FarmAllocationRecyclerAdapter(
     // view = 1
     // allocate = 2
     var isViewOrAllocate = "0"
+    private var pendingResubmitItems: JSONArray? = null
+    private var refreshAfterWsResubmit = false
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
@@ -365,8 +367,14 @@ class FarmAllocationRecyclerAdapter(
         )
     }
 
-    fun cancelOrderreason(headerID: String,reason: String,detlineID: String) {
-
+    fun cancelOrderreason(
+        headerID: String,
+        reason: String,
+        detlineID: String,
+        resubmitItems: JSONArray? = null
+    ) {
+        pendingResubmitItems = resubmitItems
+        refreshAfterWsResubmit = false
         try {
             AppDialogs.showProgressDialog(myContext)
             val jsonParam = JSONObject()
@@ -388,8 +396,42 @@ class FarmAllocationRecyclerAdapter(
         }
         catch (e: Exception)
         {
+            pendingResubmitItems = null
             AppDialogs.hideProgressDialog()
         }
+    }
+
+    fun buildSubmitItemsForRow(
+        row: FarmAllocationModel.OrderDetails.OrderRows,
+        orderPosition: Int
+    ): JSONArray {
+        val jItemArray = JSONArray()
+        val pnObj = JSONObject()
+        pnObj.put("BRANCH_CODE", row.branchCode.trim())
+        pnObj.put("QUANTITY", row.qty)
+        pnObj.put("LINE_ID", mData.get(orderPosition).lineID.trim())
+        pnObj.put("HEADER_ID", mData.get(orderPosition).headerID.trim())
+        pnObj.put("SUP_CODE", row.supervisorCode.trim())
+        pnObj.put("SUP_MOB", row.mobileNo.trim())
+        pnObj.put("REQ_WTD", row.avgWgt)
+        pnObj.put("CUST_CODE", mData.get(orderPosition).customerCode.trim())
+        pnObj.put("WEIGHMENT_TYPE", row.weighmentType.trim())
+        pnObj.put("PRODUCT_NAME", row.PROD_CATEGORY.trim())
+        pnObj.put("HIGH_WT", row.TO_WEIGHT.trim())
+        pnObj.put("LOW_WT", row.FROM_WEIGHT.trim())
+        pnObj.put("PREFERRED_FARM_CODE", row.PREFERRED_FARM_CODE?.trim())
+        pnObj.put("PREFERRED_FARM_STATUS", row.PREFERRED_FARM_STATUS?.trim())
+        mBranchList.forEach {
+            if ((it.FARM_CODE).equals(row.branchCode.trim())) {
+                pnObj.put("FARM_STOCK", it.FARM_STOCK.toFloat())
+                pnObj.put("BODY_WT", it.BODY_WT.toFloat())
+                pnObj.put("MEAN_AGE", it.MEAN_AGE.toFloat())
+                pnObj.put("APPROX_AVG_WT", it.APPROX_AVG_WT.toFloat())
+                return@forEach
+            }
+        }
+        jItemArray.put(pnObj)
+        return jItemArray
     }
 
     override fun onResponse(r: Response?) {
@@ -415,16 +457,23 @@ class FarmAllocationRecyclerAdapter(
             } else if (r.requestType.hashCode() == AppServices.API.submit_farmorder.hashCode()) {
                 Log.e("error",r.toString())
                 val res = (r as DeleteModel)
+                val forceRefresh = refreshAfterWsResubmit
+                refreshAfterWsResubmit = false
                 if (res.data?.statusCode!!.equals("200")) {
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_success))
                     mClickList.onSubmit()
                 }
                 else if (res.data?.statusCode!!.equals("-113")) {
                     AppDialogs.showToastshort(myContext, res.data?.message.toString())
-                    //mClickList.onSubmit()
+                    if (forceRefresh) {
+                        mClickList.onSubmit()
+                    }
                 }
                 else {
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_something_went_wrong))
+                    if (forceRefresh) {
+                        mClickList.onSubmit()
+                    }
                 }
             }
             else if (r.requestType.hashCode() == AppServices.API.OrderCancel.hashCode()) {
@@ -433,15 +482,24 @@ class FarmAllocationRecyclerAdapter(
                     res.data?.forEach {
                         if(it.STATUSCODE1!!.equals("200")) {
                             AppDialogs.showToastshort(myContext, it.MESSAGE1!!)
-                            mClickList.onSubmit()
+                            val itemsToSubmit = pendingResubmitItems
+                            pendingResubmitItems = null
+                            if (itemsToSubmit != null && itemsToSubmit.length() > 0) {
+                                refreshAfterWsResubmit = true
+                                submitOrder(itemsToSubmit)
+                            } else {
+                                mClickList.onSubmit()
+                            }
                         }
                         else
                         {
+                            pendingResubmitItems = null
                             AppDialogs.showToastshort(myContext, it.MESSAGE1!!)
                         }
                     }
 
                 } else {
+                    pendingResubmitItems = null
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_something_went_wrong))
                 }
             }
