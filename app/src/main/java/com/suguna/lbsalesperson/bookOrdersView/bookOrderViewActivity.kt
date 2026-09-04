@@ -472,24 +472,6 @@ class bookOrderViewActivity : BaseActivity(), BranchAllocationListener, DatePick
                 }
 
             }
-            else if (r.requestType.hashCode() == AppServices.API.update_downtrentorder.hashCode()) {
-                if(r.responseCode ==200) {
-                    if (mStatus.equals("Y")) {
-                        AppDialogs.showToastshort(myContext, "Down trend is enabled. ")
-                        mOrderRefresh="1";
-                        getOrderList()
-                    } else {
-                        AppDialogs.showToastshort(myContext, "Down trend is disabled. ")
-                        mOrderRefresh="1";
-                        getOrderList()
-                    }
-                }
-                else
-                {
-                    AppDialogs.showToastshort(myContext, r.responseMessage)
-                }
-
-            }
 
 
         }
@@ -659,68 +641,6 @@ class bookOrderViewActivity : BaseActivity(), BranchAllocationListener, DatePick
                         Request.Method.POST,
                         AppServices.API.update_pricelistorder,
                         RegionModel::class.java, jsonParam
-
-                    )
-                    Log.e("Reason", reason)
-                }
-            },
-            true,
-            true
-        )
-
-
-    }
-
-    public fun update_downtrendList(branhcode: String?, status: String, locationName: String?) {
-
-        //getRegion_asyn().execute()
-        mStatus=status
-        mReasonNameList.clear()
-        var reason=""
-        var reasonheading="";
-        if (locationName != null) {
-            mBranch=locationName
-        }
-
-        mReasonList.forEach {
-            if(mStatus.equals("Y")) {
-                if (it.isStopped!!.equals("1.1")) {
-                    mReasonNameList.add(it.Reason!!)
-                }
-                reasonheading=" Select Disable Reason"
-            }
-            else
-            {
-                if (it.isStopped!!.equals("0.0")) {
-                    mReasonNameList.add(it.Reason!!)
-                }
-                reasonheading=" Select Disable Reason"
-            }
-        }
-
-        AppDialogs.showSingleChoice(
-            myContext,
-            reasonheading,
-            mReasonNameList,
-            object : SingleChoiceAdapter.Callback {
-                override fun info(position: Int, text: String) {
-                    AppDialogs.hideSingleChoice()
-                    AppDialogs.showProgressDialog(myContext)
-                    reason= text
-                    val jsonParam = JSONObject()
-                    jsonParam.put("USERID", LocalStorageSP.getLoginUser(myContext).USERID)
-                    jsonParam.put("TKEY", LocalStorageSP.getLoginUser(myContext).TKEY)
-                    jsonParam.put("EMPNUM", LocalStorageSP.get(myContext, FeedBackActivity.Name, "")!!)
-
-                    jsonParam.put("BRANCHCODE", branhcode)
-                    jsonParam.put("ORDERDATE", mDatePickerTV.text.toString())
-                    jsonParam.put("STATUS", status)
-                    jsonParam.put("REASON", reason)
-                    AppServices.execute(
-                        myContext, this@bookOrderViewActivity,
-                        Request.Method.POST,
-                        AppServices.API.update_downtrentorder,
-                        Response::class.java, jsonParam
 
                     )
                     Log.e("Reason", reason)

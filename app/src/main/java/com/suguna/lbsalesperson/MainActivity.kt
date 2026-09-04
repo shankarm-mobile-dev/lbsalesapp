@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
                 }
                 if(!getLoginUser(myContext).FARM_WISE_AREA.equals("0"))
                 {
-                    if ((vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_so_order))) || (vv?.title.equals(getString(R.string.label_book_order_view)))) {
+                    if ((vv?.title.equals(getString(R.string.label_exceptipn_order))) || (vv?.title.equals(getString(R.string.label_book_order_view)))) {
                         mMenus.add(vv!!)
                     }
                 }

@@ -31,12 +31,6 @@ class BookOrderOtpModel : Response(), Serializable {
     @SerializedName("PRICE_STOP")
     val priceStop: String? = null
 
-    @SerializedName("PRICE_DOWNTRENT")
-    val priceDowntrent: String? = null
-
-    @SerializedName("PRICE_DECLARED")
-    val priceDeclared: String? = null
-
     @SerializedName("CLUSTER_NAME")
     val clusterName: String? = null
 }

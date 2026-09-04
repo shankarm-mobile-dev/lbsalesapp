@@ -96,7 +96,6 @@ class AppServices {
         val get_bookorder_order = "bookorderview/get_bookorder_order"
         val update_bookorder = "bookorderview/update_bookorder"
         val update_pricelistorder = "bookorderview/update_pricelistorder"
-        val update_downtrentorder = "bookorderview/update_downtrentorder"
     }
 
     private interface ApiInterface {
