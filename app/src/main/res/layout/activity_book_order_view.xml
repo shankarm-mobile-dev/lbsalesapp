@@ -393,7 +393,7 @@
                             android:textColor="@color/white"
                             android:textSize="10sp"
                             android:textStyle="bold"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -531,8 +531,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:visibility="gone" />
+                            android:layout_weight="1" />
                     </LinearLayout>
 
                     <LinearLayout

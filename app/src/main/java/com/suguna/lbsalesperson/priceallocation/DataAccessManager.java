@@ -49,8 +49,8 @@ public class DataAccessManager {
     public static WebserviceURLs wsurl;
    //public static final String SERVER_URL = "http://10.5.1.228/lborderappWs/index.php/api/"; // DEV
    //public static final String SERVER_URL = "http://10.11.1.124:8090/api/"; // shankar system new java webservice
-    // public static final String SERVER_URL = "https://salesapps.sgitsys.com:8443/lborder/api/"; // PROD
-    public static final String SERVER_URL = "http://10.5.1.227:8080/lborder/api/"; // local server
+   //  public static final String SERVER_URL = "https://salesapps.sgitsys.com:8443/lborder2/api/"; // PROD
+    public static final String SERVER_URL = "http://10.5.1.227:8080/lborder2/api/"; // local server
     //public static final String SERVER_URL = "https://bankuat.sgitsys.com:8443/lborder/api/";
     public static final String LOGIN_URL = SERVER_URL + "pricedeclaration/login";
     public static final String LB_PRICE_URL = SERVER_URL + "pricedeclaration/getlbdet";

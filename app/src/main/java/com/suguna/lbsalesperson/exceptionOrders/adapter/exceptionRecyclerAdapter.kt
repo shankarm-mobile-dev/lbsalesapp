@@ -159,6 +159,13 @@ class exceptionRecyclerAdapter (
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun refreshList(newList: ArrayList<ExceptionOtpModel>) {
+        mData.clear()
+        mData.addAll(newList)
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return mData.size
     }

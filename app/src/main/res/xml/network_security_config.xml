@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
 <domain-config cleartextTrafficPermitted="true">
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            system
+        </trust-anchors>
+    </base-config>
     <domain includeSubdomains="true">118.185.181.62</domain>
     <domain includeSubdomains="true">10.5.1.228</domain>
     <domain includeSubdomains="true">10.5.1.227</domain>
     <domain includeSubdomains="true">mobileapps.sgitsys.com</domain>
     <domain includeSubdomains="true">10.11.1.124</domain>
     <domain includeSubdomains="true">bankuat.sgitsys.com</domain>
+    <domain includeSubdomains="true">salesapps.sgitsys.com</domain>
 </domain-config>
 </network-security-config>

@@ -160,7 +160,7 @@ class FarmAllocationActivity : BaseActivity(), BranchAllocationListener, DatePic
         mMenuRecycler!!.setLayoutManager(LinearLayoutManager(myContext))
         mMenuRecycler!!.setNestedScrollingEnabled(true)
 
-        mMenuAdapter = FarmAllocationRecyclerAdapter(myContext, data.orders!!, data.branches!!, data.supervisor!!, this, mRegionId,data.weighmenttype!!,data.diffprice!!)
+        mMenuAdapter = FarmAllocationRecyclerAdapter(myContext, data.orders!!, data.branches!!, data.supervisor!!, this, mRegionId,data.weighmenttype!!,data.diffprice!!, mDatePickerTV.text.toString())
         mMenuRecycler!!.adapter = mMenuAdapter
     }
 

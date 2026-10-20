@@ -35,7 +35,8 @@ class FarmAllocationRecyclerAdapter(
     private var mClickList: BranchAllocationListener,
     private var mRegionId: String,
     private val mWeighmenttypeList: ArrayList<FarmAllocationModel.Weighmenttype>,
-    private val diffprice: ArrayList<FarmAllocationModel.Diffprice>
+    private val diffprice: ArrayList<FarmAllocationModel.Diffprice>,
+    private var mOrderDate: String
 ) : RecyclerView.Adapter<FarmAllocationRecyclerAdapter.ViewHolder>(), ResponseListener {
     var mMenuAdapter: FarmAllocationRecyclerSubAdapter? = null
     var currentPosition: Int = -1
@@ -43,6 +44,11 @@ class FarmAllocationRecyclerAdapter(
     // view = 1
     // allocate = 2
     var isViewOrAllocate = "0"
+    private var pendingResubmitItems: JSONArray? = null
+    private var refreshAfterWsResubmit = false
+    private var insertFarmPriceAfterCancel = false
+    private val extraFarmList: ArrayList<FarmAllocationModel.Branches> = arrayListOf()
+    private var farmPriceListCallback: ((ArrayList<FarmAllocationModel.Branches>) -> Unit)? = null
     override fun onCreateViewHolder(
             parent: ViewGroup,
             viewType: Int
@@ -365,8 +371,16 @@ class FarmAllocationRecyclerAdapter(
         )
     }
 
-    fun cancelOrderreason(headerID: String,reason: String,detlineID: String) {
-
+    fun cancelOrderreason(
+        headerID: String,
+        reason: String,
+        detlineID: String,
+        resubmitItems: JSONArray? = null,
+        insertFarmPrice: Boolean = false
+    ) {
+        pendingResubmitItems = resubmitItems
+        refreshAfterWsResubmit = false
+        insertFarmPriceAfterCancel = insertFarmPrice
         try {
             AppDialogs.showProgressDialog(myContext)
             val jsonParam = JSONObject()
@@ -388,8 +402,113 @@ class FarmAllocationRecyclerAdapter(
         }
         catch (e: Exception)
         {
+            pendingResubmitItems = null
+            insertFarmPriceAfterCancel = false
             AppDialogs.hideProgressDialog()
         }
+    }
+
+    fun buildSubmitItemsForRow(
+        row: FarmAllocationModel.OrderDetails.OrderRows,
+        orderPosition: Int
+    ): JSONArray {
+        val jItemArray = JSONArray()
+        val pnObj = JSONObject()
+        pnObj.put("BRANCH_CODE", row.branchCode.trim())
+        pnObj.put("QUANTITY", row.qty)
+        pnObj.put("LINE_ID", mData.get(orderPosition).lineID.trim())
+        pnObj.put("HEADER_ID", mData.get(orderPosition).headerID.trim())
+        pnObj.put("SUP_CODE", row.supervisorCode.trim())
+        pnObj.put("SUP_MOB", row.mobileNo.trim())
+        pnObj.put("REQ_WTD", row.avgWgt)
+        pnObj.put("CUST_CODE", mData.get(orderPosition).customerCode.trim())
+        pnObj.put("WEIGHMENT_TYPE", row.weighmentType.trim())
+        pnObj.put("PRODUCT_NAME", row.PROD_CATEGORY.trim())
+        pnObj.put("HIGH_WT", row.TO_WEIGHT.trim())
+        pnObj.put("LOW_WT", row.FROM_WEIGHT.trim())
+        pnObj.put("PREFERRED_FARM_CODE", row.PREFERRED_FARM_CODE?.trim())
+        pnObj.put("PREFERRED_FARM_STATUS", row.PREFERRED_FARM_STATUS?.trim())
+        extraFarmList.forEach {
+            if ((it.FARM_CODE).equals(row.branchCode.trim())) {
+                putFarmMetrics(pnObj, it)
+                return@forEach
+            }
+        }
+        if (!pnObj.has("FARM_STOCK")) {
+            mBranchList.forEach {
+                if ((it.FARM_CODE).equals(row.branchCode.trim())) {
+                    putFarmMetrics(pnObj, it)
+                    return@forEach
+                }
+            }
+        }
+        jItemArray.put(pnObj)
+        return jItemArray
+    }
+
+    private fun putFarmMetrics(pnObj: JSONObject, farm: FarmAllocationModel.Branches) {
+        pnObj.put("FARM_STOCK", toFloatSafe(farm.FARM_STOCK))
+        pnObj.put("BODY_WT", toFloatSafe(farm.BODY_WT))
+        pnObj.put("MEAN_AGE", toFloatSafe(farm.MEAN_AGE))
+        pnObj.put("APPROX_AVG_WT", toFloatSafe(farm.APPROX_AVG_WT))
+    }
+
+    private fun toFloatSafe(value: String?): Float {
+        return try {
+            if (value.isNullOrBlank()) 0f else value.toFloat()
+        } catch (e: Exception) {
+            0f
+        }
+    }
+
+    fun findFarm(farmCode: String?): FarmAllocationModel.Branches? {
+        if (farmCode.isNullOrBlank()) return null
+        extraFarmList.firstOrNull { it.FARM_CODE.equals(farmCode, true) }?.let { return it }
+        return mBranchList.firstOrNull { it.FARM_CODE.equals(farmCode, true) }
+    }
+
+    fun addFarmPriceBranches(list: ArrayList<FarmAllocationModel.Branches>) {
+        list.forEach { incoming ->
+            if (extraFarmList.none { it.FARM_CODE.equals(incoming.FARM_CODE, true) }) {
+                extraFarmList.add(incoming)
+            }
+        }
+    }
+
+    fun fetchBranchFarmPrice(onResult: (ArrayList<FarmAllocationModel.Branches>) -> Unit) {
+        farmPriceListCallback = onResult
+        AppDialogs.showProgressDialog(myContext)
+        val jsonParam = JSONObject()
+        jsonParam.put("USERID", LocalStorageSP.getLoginUser(myContext).USERID)
+        jsonParam.put("TKEY", LocalStorageSP.getLoginUser(myContext).TKEY)
+        jsonParam.put("EMPNUM", LocalStorageSP.get(myContext, LoginActivity.Name, "")!!)
+        jsonParam.put("REGIONCODE", mRegionId)
+        jsonParam.put("ORDERDATE", mOrderDate)
+        Log.e("jsonParam", jsonParam.toString())
+        AppServices.execute(
+            myContext, this,
+            Request.Method.POST,
+            AppServices.API.get_branch_farmprice,
+            FarmPriceFarmListModel::class.java, jsonParam
+        )
+    }
+
+    fun insertFarmPriceOrder(items: JSONArray) {
+        AppDialogs.showProgressDialog(myContext)
+        val jsonParam = JSONObject()
+        jsonParam.put("USERID", LocalStorageSP.getLoginUser(myContext).USERID)
+        jsonParam.put("TKEY", LocalStorageSP.getLoginUser(myContext).TKEY)
+        jsonParam.put("EMPNUM", LocalStorageSP.get(myContext, LoginActivity.Name, "")!!)
+        jsonParam.put("ORDERDATE", mOrderDate)
+        jsonParam.put("BRANCH_CODE", mRegionId)
+        jsonParam.put("LINES", items)
+        Log.e("jsonParam", jsonParam.toString())
+        AppServices.execute(
+            myContext, this,
+            Request.Method.POST,
+            AppServices.API.insert_orderlinefarmpricedet,
+            DeleteModel::class.java, jsonParam
+        )
     }
 
     override fun onResponse(r: Response?) {
@@ -415,16 +534,23 @@ class FarmAllocationRecyclerAdapter(
             } else if (r.requestType.hashCode() == AppServices.API.submit_farmorder.hashCode()) {
                 Log.e("error",r.toString())
                 val res = (r as DeleteModel)
+                val forceRefresh = refreshAfterWsResubmit
+                refreshAfterWsResubmit = false
                 if (res.data?.statusCode!!.equals("200")) {
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_success))
                     mClickList.onSubmit()
                 }
                 else if (res.data?.statusCode!!.equals("-113")) {
                     AppDialogs.showToastshort(myContext, res.data?.message.toString())
-                    //mClickList.onSubmit()
+                    if (forceRefresh) {
+                        mClickList.onSubmit()
+                    }
                 }
                 else {
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_something_went_wrong))
+                    if (forceRefresh) {
+                        mClickList.onSubmit()
+                    }
                 }
             }
             else if (r.requestType.hashCode() == AppServices.API.OrderCancel.hashCode()) {
@@ -433,14 +559,53 @@ class FarmAllocationRecyclerAdapter(
                     res.data?.forEach {
                         if(it.STATUSCODE1!!.equals("200")) {
                             AppDialogs.showToastshort(myContext, it.MESSAGE1!!)
-                            mClickList.onSubmit()
+                            val itemsToSubmit = pendingResubmitItems
+                            pendingResubmitItems = null
+                            if (itemsToSubmit != null && itemsToSubmit.length() > 0) {
+                                if (insertFarmPriceAfterCancel) {
+                                    insertFarmPriceAfterCancel = false
+                                    insertFarmPriceOrder(itemsToSubmit)
+                                } else {
+                                    refreshAfterWsResubmit = true
+                                    submitOrder(itemsToSubmit)
+                                }
+                            } else {
+                                insertFarmPriceAfterCancel = false
+                                mClickList.onSubmit()
+                            }
                         }
                         else
                         {
+                            pendingResubmitItems = null
+                            insertFarmPriceAfterCancel = false
                             AppDialogs.showToastshort(myContext, it.MESSAGE1!!)
                         }
                     }
 
+                } else {
+                    pendingResubmitItems = null
+                    insertFarmPriceAfterCancel = false
+                    AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_something_went_wrong))
+                }
+            } else if (r.requestType.hashCode() == AppServices.API.get_branch_farmprice.hashCode()) {
+                val callback = farmPriceListCallback
+                farmPriceListCallback = null
+                val data = (r as FarmPriceFarmListModel)
+                val farms = data.farmList()
+                if (farms.size > 0) {
+                    addFarmPriceBranches(farms)
+                    callback?.invoke(farms)
+                } else {
+                    AppDialogs.showToastshort(myContext, "Farm not available.")
+                }
+            } else if (r.requestType.hashCode() == AppServices.API.insert_orderlinefarmpricedet.hashCode()) {
+                val res = (r as DeleteModel)
+                if (res.data?.statusCode!!.equals("200")) {
+                    AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_success))
+                    mClickList.onSubmit()
+                } else if (res.data?.statusCode!!.equals("-113")) {
+                    AppDialogs.showToastshort(myContext, res.data?.message.toString())
+                    mClickList.onSubmit()
                 } else {
                     AppDialogs.showToastshort(myContext, myContext.getString(R.string.msg_something_went_wrong))
                 }

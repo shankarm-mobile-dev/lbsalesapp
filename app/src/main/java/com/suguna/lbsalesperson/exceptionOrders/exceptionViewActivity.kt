@@ -57,6 +57,9 @@ class exceptionViewActivity: BaseActivity(), BranchAllocationListener, DatePicke
     lateinit var branch_tv: TextView;
     lateinit var customer_tv: TextView;
     lateinit var mFindTV: TextView;
+    var mOrderRefresh = "0"
+    var mSavedListPosition = 0
+    var mSavedListOffset = 0
     var custdate: CustomDate_Edittext_1? = null
     val MyPREFERENCES = "MyPrefs"
     val Name = "name"
@@ -209,7 +212,7 @@ class exceptionViewActivity: BaseActivity(), BranchAllocationListener, DatePicke
 
         }
     }
-    private fun getliftotp() {
+    private fun getliftotp(keepPosition: Boolean = false) {
         mliftotptempdetails.clear()
         mliftotpdetails.forEach {
 
@@ -246,7 +249,7 @@ class exceptionViewActivity: BaseActivity(), BranchAllocationListener, DatePicke
                 }
             }
         }
-        setRecycleViewAdapter(mliftotptempdetails)
+        setRecycleViewAdapter(mliftotptempdetails, keepPosition)
     }
 
     override fun onBackPressed() {
@@ -363,21 +366,30 @@ class exceptionViewActivity: BaseActivity(), BranchAllocationListener, DatePicke
                 Log.e("come", "come")
                 Log.e("data", data.data!!.size.toString())
                 mliftotpdetails=data.data!!;
+                val keepPosition = mOrderRefresh == "1" && mMenuAdapter != null
                 if (data.data!!.size > 0) {
                     mHeaderRecycler!!.visibility = View.VISIBLE
                     lyt_filter!!.visibility = View.VISIBLE
-                    customer_tv.text ="All"
-                    branch_tv.text ="All"
+                    if (!keepPosition) {
+                        customer_tv.text ="All"
+                        branch_tv.text ="All"
+                    }
 
                 } else {
                     mHeaderRecycler!!.visibility = View.GONE
                     lyt_filter!!.visibility = View.GONE
                     AppDialogs.showToastshort(myContext, "No Data Found!!!")
                 }
-                setRecycleViewAdapter(data.data!!)
+                if (keepPosition && (!branch_tv.text.equals("All") || !customer_tv.text.equals("All"))) {
+                    getliftotp(true)
+                } else {
+                    setRecycleViewAdapter(data.data!!, keepPosition)
+                }
+                mOrderRefresh = "0"
             }
             else if (r.requestType.hashCode() == AppServices.API.update_exception_order.hashCode()) {
-
+                    saveListPosition()
+                    mOrderRefresh = "1"
                     getOrderList()
 
 
@@ -386,12 +398,31 @@ class exceptionViewActivity: BaseActivity(), BranchAllocationListener, DatePicke
 
         }
     }
-    private fun setRecycleViewAdapter(data: ArrayList<ExceptionOtpModel>) {
+    private fun setRecycleViewAdapter(data: ArrayList<ExceptionOtpModel>, keepPosition: Boolean = false) {
+        if (keepPosition && mMenuAdapter != null) {
+            mMenuAdapter!!.refreshList(data)
+            restoreListPosition()
+            return
+        }
         mMenuRecycler!!.setHasFixedSize(true)
         mMenuRecycler!!.setLayoutManager(LinearLayoutManager(myContext))
         mMenuRecycler!!.setNestedScrollingEnabled(true)
         mMenuAdapter = exceptionRecyclerAdapter(myContext, data)
         mMenuRecycler!!.adapter = mMenuAdapter
+    }
+
+    private fun saveListPosition() {
+        val layoutManager = mMenuRecycler?.layoutManager as? LinearLayoutManager ?: return
+        mSavedListPosition = layoutManager.findFirstVisibleItemPosition()
+        val firstVisible = layoutManager.findViewByPosition(mSavedListPosition)
+        mSavedListOffset = firstVisible?.top ?: 0
+    }
+
+    private fun restoreListPosition() {
+        val layoutManager = mMenuRecycler?.layoutManager as? LinearLayoutManager ?: return
+        mMenuRecycler?.post {
+            layoutManager.scrollToPositionWithOffset(mSavedListPosition, mSavedListOffset)
+        }
     }
     private fun getRegionList() {
         AppDialogs.showProgressDialog(myContext)

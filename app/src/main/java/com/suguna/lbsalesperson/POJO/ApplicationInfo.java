@@ -40,7 +40,9 @@ public class ApplicationInfo {
 
 	//private final static int APPLICATION_VERSIONCODE = 36; //  version released on 06-May-26 for farm price disable in SMART App.
 
-	private final static int APPLICATION_VERSIONCODE = 37; //  version released on 06-May-26 for farm price disable in SMART App.
+	//private final static int APPLICATION_VERSIONCODE = 37; //  version released on 06-May-26 for farm price disable in SMART App.
+
+	private final static int APPLICATION_VERSIONCODE = 38; //  version released on 04-Sep-26 for Live Order Status Dashboard – Cluster Incorporation.
 	public static String getAPPLICATION_NAME() {
 		return APPLICATION_NAME;
 	}

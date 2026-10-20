@@ -13,7 +13,7 @@
     <string name="label_order_status">Order Status</string>
     <string name="label_liftotp_view">Lifting OTP View</string>
     <string name="label_exceptipn_order">Exception Order</string>
-    <string name="label_so_order">SO</string>
+    <string name="label_so_order">Exception Orders</string>
     <string name="label_book_order_view">Live Order Status</string>
 
     <string name="label_ok">Ok</string>
@@ -30,6 +30,7 @@
     <string name="no_internet">Oops, No internet connection</string>
     <string name="label_branch_name">Branch</string>
     <string name="label_farm_name">Farm Name</string>
+    <string name="msg_change_booked_farm">Do you want to change the customer booked farm?</string>
     <string name="label_vechicle_no">Vehicle No.</string>
     <string name="label_qty">Qty(KG)</string>
     <string name="label_bdwt">Req.Bt.wt.</string>
@@ -43,7 +44,7 @@
     <string name="allocate">Allocate</string>
     <string name="msg_success">Successfully compeleted</string>
     <string name="msg_something_went_wrong">Something went wrong!!!. Please try again</string>
-    <string name="copyrights">Application Version 3.7</string>
+    <string name="copyrights">Application Version 3.8</string>
     <string name="successfully_msg" translatable="false">Close navigation drawer</string>
     <string name="is_editable">isEditable</string>
     <string name="device_id">deviceId</string>

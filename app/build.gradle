@@ -10,8 +10,8 @@ android {
         applicationId "com.suguna.lbsalesperson"
         minSdkVersion 21
         targetSdkVersion 36
-        versionCode 40
-        versionName "3.7"
+        versionCode 41
+        versionName "3.8"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         useLibrary 'org.apache.http.legacy'
     }

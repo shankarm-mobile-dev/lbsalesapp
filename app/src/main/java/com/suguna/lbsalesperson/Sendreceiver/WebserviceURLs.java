@@ -44,20 +44,20 @@ public class WebserviceURLs {
     // Change in DataAccessManager file also
     //private final String prod_ipandport = "223.30.13.106:8083";// production url
    // public static final String prod_ipandport = "rise.sgitsys.com:8094";// production url
-    public static final String prod_ipandport = "https://salesapps.sgitsys.com:8443/lborder";// production url
+    public static final String prod_ipandport = "https://salesapps.sgitsys.com:8443/lborder2";// production url
     //private final String dev_ipandport = "10.10.0.175:8080";// local
     //public    static final String dev_ipandport = "http://10.5.1.228/lborderappWs/index.php";// test	server url
     public    static final String dev_ipandport = "http://10.11.1.124:8090";// test	shankar system url
     //private final String test_ipandport = "10.10.0.227:8090";// test
-    public static final String test_ipandport = "http://10.5.1.227:8080/lborder";// test for mobile data connectivity url
+    public static final String test_ipandport = "http://10.5.1.227:8080/lborder2";// test for mobile data connectivity url
 
     //public static final String test_ipandport = "https://bankuat.sgitsys.com:8443/lborder";// test for mobile data connectivity url
     String instance = "";
 
     public WebserviceURLs() {
          // processUrlDecision(development);
-            processUrlDecision(testing);
-         // processUrlDecision(production);
+           processUrlDecision(testing);
+        // processUrlDecision(production);
     }
 
     public String getLsloginPage() {

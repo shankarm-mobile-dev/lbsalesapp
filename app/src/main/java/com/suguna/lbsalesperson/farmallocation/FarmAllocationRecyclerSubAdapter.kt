@@ -23,6 +23,7 @@ import com.suguna.lbsalesperson.feedback.activity.FeedBackActivity
 import com.truelife.api.AppServices
 import com.truelife.http.Response
 import com.truelife.http.ResponseListener
+import org.json.JSONArray
 import org.json.JSONObject
 
 class FarmAllocationRecyclerSubAdapter(
@@ -53,6 +54,7 @@ class FarmAllocationRecyclerSubAdapter(
     val aProductcatList = arrayListOf<String>()
     val aCancelresionList = arrayListOf<String>()
     var selectedPosition = -1
+    private val reasonWsWronglyAllocated = "WS Wrongly Allocated"
 
     override fun onCreateViewHolder(
             parent: ViewGroup,
@@ -81,6 +83,12 @@ class FarmAllocationRecyclerSubAdapter(
                 return@forEach
             }
           //  mSelectedBranch.add(it.FARM_DESC)
+        }
+        if (aHolder.mBranchNameTv.text.isNullOrBlank()) {
+            val extraFarm = adapter.findFarm(mData.get(position).branchCode)
+            if (extraFarm != null) {
+                aHolder.mBranchNameTv.text = farmDisplayName(extraFarm)
+            }
         }
         Log.e("prod_cat",prod_cat);
         if(prod_cat!=("-") ) {
@@ -732,6 +740,17 @@ if(!PREFAVGWT.equals("0"))
             aHolder.mSubmitTV.text = myContext.getString(R.string.label_submit)
             Log.e("c16","c16")}
 
+        if (isFarmPriceBooking()) {
+            aHolder.mEditFarmImg.visibility = View.VISIBLE
+            aHolder.mDeleteImg.visibility = View.GONE
+        } else {
+            aHolder.mEditFarmImg.visibility = View.GONE
+        }
+        aHolder.mEditFarmImg.setOnClickListener {
+            selectedPosition = position
+            promptChangeBookedFarm(position, aHolder)
+        }
+
     }
 
     override fun getItemCount(): Int {
@@ -742,6 +761,7 @@ if(!PREFAVGWT.equals("0"))
     inner class ViewHolder constructor(aView: View) :
             RecyclerView.ViewHolder(aView) {
         val mDeleteImg: ImageView
+        val mEditFarmImg: ImageView
         val mBranchNameTv: TextView
         val mSubmitTV: TextView
         val mQtyTv: EditText
@@ -769,6 +789,7 @@ if(!PREFAVGWT.equals("0"))
             mSubmitTV = aView.findViewById<View>(R.id.submit_tv) as TextView
             mBranchNameTv = aView.findViewById<View>(R.id.branch_name_tv) as TextView
             mDeleteImg = aView.findViewById<View>(R.id.delete_img) as ImageView
+            mEditFarmImg = aView.findViewById<View>(R.id.edit_farm_img) as ImageView
             mAddBranch = aView.findViewById<View>(R.id.add_new_branch_lay) as LinearLayout
             mSubmitlay = aView.findViewById<View>(R.id.submit_lay) as LinearLayout
             vehicle_name_tv= aView.findViewById<View>(R.id.vehicle_name_tv) as TextView
@@ -835,6 +856,157 @@ if(!PREFAVGWT.equals("0"))
         mData.get(position).submittemp = 1
     }
 
+    private fun isFarmPriceBooking(): Boolean {
+        return mParentObj.bookingType.contains("FarmPrice", ignoreCase = true)
+    }
+
+    private fun isWsAllocated(row: FarmAllocationModel.OrderDetails.OrderRows): Boolean {
+        val code = row.supervisorCode?.trim().orEmpty()
+        return code.isNotEmpty() && code != "-" && code != "0"
+    }
+
+    private fun farmDisplayName(farm: FarmAllocationModel.Branches): String {
+        return farm.FARM_CODE + " - " + farm.FARM_DESC + " - Bird Stock: " + farm.FARM_STOCK + " - Approx. wt: " + farm.BODY_WT + " - Age: " + farm.MEAN_AGE
+    }
+
+    private fun promptChangeBookedFarm(position: Int, aHolder: ViewHolder) {
+        AppDialogs.customDoubleAction(
+            myContext,
+            "",
+            myContext.getString(R.string.msg_change_booked_farm),
+            "Yes",
+            "No",
+            object : AppDialogs.OptionListener {
+                override fun no() {
+                }
+
+                override fun yes() {
+                    if (Utility.isInternetAvailable(myContext)) {
+                        adapter.fetchBranchFarmPrice { farms ->
+                            showFarmPriceChoice(position, aHolder, farms)
+                        }
+                    } else AppDialogs.customOkAction(
+                        myContext,
+                        "Alert",
+                        "Please check the internet",
+                        "Ok",
+                        object : AppDialogs.ConfirmListener {
+                            override fun yes() {
+                            }
+                        },
+                        false
+                    )
+                }
+            },
+            true,
+            false
+        )
+    }
+
+    private fun showFarmPriceChoice(
+        position: Int,
+        aHolder: ViewHolder,
+        farms: ArrayList<FarmAllocationModel.Branches>
+    ) {
+        val farmNames = arrayListOf<String>()
+        farms.forEach {
+            farmNames.add(farmDisplayName(it))
+        }
+        AppDialogs.showSingleChoice(myContext, "Choose Farm", farmNames, object : SingleChoiceAdapter.Callback {
+            override fun info(pos: Int, text: String) {
+                AppDialogs.hideSingleChoice()
+                var selectedFarm: FarmAllocationModel.Branches? = null
+                farms.forEach {
+                    if (farmDisplayName(it).equals(text, true)) {
+                        selectedFarm = it
+                        return@forEach
+                    }
+                }
+                if (selectedFarm == null) {
+                    AppDialogs.showToastshort(myContext, "Please select farm")
+                    return
+                }
+                aHolder.mBranchNameTv.text = text
+                updateBranch(position, selectedFarm!!.FARM_CODE)
+                val row = mData.get(position)
+                if (isWsAllocated(row)) {
+                    aHolder.mSupervisorNameTv.isClickable = false
+                    aHolder.mSupervisorNameTv.isFocusable = false
+                    aHolder.mSupervisorMobTv.isEnabled = false
+                    aHolder.mSupervisorMobTv.isClickable = false
+                    aHolder.mSupervisorMobTv.isFocusable = false
+                    val items = adapter.buildSubmitItemsForRow(row, this@FarmAllocationRecyclerSubAdapter.pos)
+                    adapter.cancelOrderreason(
+                        mParentObj.headerID,
+                        "Change Farm",
+                        row.detaillineId,
+                        items,
+                        true
+                    )
+                } else {
+                    promptWsThenInsertFarmPrice(position, aHolder)
+                }
+            }
+        }, true, true)
+    }
+
+    private fun promptWsThenInsertFarmPrice(position: Int, aHolder: ViewHolder) {
+        aSupervisorNameList.clear()
+        mSupervosirList.forEach {
+            aSupervisorNameList.add(it.EMP_NO + " - " + it.EMP_NAME)
+        }
+        if (mSupervosirList.size == 0) {
+            AppDialogs.customOkAction(myContext, "Alert", "Supervisor not available.", "Ok", object : AppDialogs.ConfirmListener {
+                override fun yes() {
+                }
+            }, false)
+            return
+        }
+        AppDialogs.showSingleChoice(myContext, "Choose Supervisor", aSupervisorNameList, object : SingleChoiceAdapter.Callback {
+            override fun info(pos: Int, text: String) {
+                AppDialogs.hideSingleChoice()
+                var selectedSup: FarmAllocationModel.Supervisor? = null
+                mSupervosirList.forEach {
+                    if ((it.EMP_NO + " - " + it.EMP_NAME).equals(text, true)) {
+                        selectedSup = it
+                        return@forEach
+                    }
+                }
+                if (selectedSup == null) {
+                    AppDialogs.showToastshort(myContext, "Please select WS name")
+                    return
+                }
+                aHolder.mSupervisorNameTv.text = text
+                aHolder.mSupervisorMobTv.setText(selectedSup!!.MOBILENO)
+                updateSupervisor(position, selectedSup!!.EMP_NO, selectedSup!!.MOBILENO, selectedSup!!.EMP_NAME)
+                val mobile = aHolder.mSupervisorMobTv.text.toString().trim()
+                if (mobile.isEmpty() || mobile == "0") {
+                    AppDialogs.customOkAction(myContext, "Alert", "Please enter supervisor mobile number", "Ok", object : AppDialogs.ConfirmListener {
+                        override fun yes() {
+                        }
+                    }, false)
+                    return
+                }
+                if (mobile.length != 10 && getLoginUser(myContext).ledgerId.equals("2025")) {
+                    AppDialogs.customOkAction(myContext, "Alert", "Please enter valid supervisor mobile number", "Ok", object : AppDialogs.ConfirmListener {
+                        override fun yes() {
+                        }
+                    }, false)
+                    return
+                }
+                if (!(mobile.length >= 10 && mobile.length <= 13) && getLoginUser(myContext).ledgerId.equals("2022")) {
+                    AppDialogs.customOkAction(myContext, "Alert", "Please enter valid supervisor mobile number-BD", "Ok", object : AppDialogs.ConfirmListener {
+                        override fun yes() {
+                        }
+                    }, false)
+                    return
+                }
+                val items = adapter.buildSubmitItemsForRow(mData.get(position), this@FarmAllocationRecyclerSubAdapter.pos)
+                adapter.insertFarmPriceOrder(items)
+            }
+        }, true, true)
+    }
+
     fun updateWeighmenttype(position: Int, type: String) {
         mData.get(position).weighmentType = type
         mData.get(position).submittemp = 1
@@ -885,6 +1057,73 @@ if(!PREFAVGWT.equals("0"))
     {
         AppDialogs.hideProgressDialog()
     }
+    }
+
+    private fun confirmAndCancelAllocation(reason: String, resubmitItems: JSONArray? = null) {
+        AppDialogs.customDoubleAction(myContext, "", "Are you sure want to Cancel this farm allocation ?", "Yes",
+            "No", object : AppDialogs.OptionListener {
+                override fun no() {
+
+                }
+
+                override fun yes() {
+                    adapter.cancelOrderreason(
+                        mParentObj.headerID,
+                        reason,
+                        mData.get(selectedPosition).detaillineId,
+                        resubmitItems
+                    )
+                }
+            }, true, false)
+    }
+
+    private fun promptNewWsNameThenCancel(reason: String) {
+        if (selectedPosition < 0 || selectedPosition >= mData.size) {
+            AppDialogs.showToastshort(myContext, "Unable to capture WS name")
+            return
+        }
+        val currentWsCode = mData.get(selectedPosition).supervisorCode.trim()
+        aSupervisorNameList.clear()
+        mSupervosirList.forEach {
+            aSupervisorNameList.add(it.EMP_NO + " - " + it.EMP_NAME)
+        }
+        if (mSupervosirList.size == 0) {
+            AppDialogs.customOkAction(myContext, "Alert", "Supervisor not available.", "Ok", object : AppDialogs.ConfirmListener {
+                override fun yes() {
+
+                }
+            }, false)
+            return
+        }
+        AppDialogs.showSingleChoice(myContext, "Choose WS Name", aSupervisorNameList, object : SingleChoiceAdapter.Callback {
+            override fun info(pos: Int, text: String) {
+                AppDialogs.hideSingleChoice()
+                var selectedSup: FarmAllocationModel.Supervisor? = null
+                mSupervosirList.forEach {
+                    if ((it.EMP_NO + " - " + it.EMP_NAME).equals(text, true)) {
+                        selectedSup = it
+                        return@forEach
+                    }
+                }
+                if (selectedSup == null) {
+                    AppDialogs.showToastshort(myContext, "Please select WS name")
+                    return
+                }
+                if (selectedSup!!.EMP_NO.trim().equals(currentWsCode, true)) {
+                    AppDialogs.showToastshort(myContext, "Please select a different WS name")
+                    promptNewWsNameThenCancel(reason)
+                    return
+                }
+                updateSupervisor(
+                    selectedPosition,
+                    selectedSup!!.EMP_NO,
+                    selectedSup!!.MOBILENO,
+                    selectedSup!!.EMP_NAME
+                )
+                val resubmitItems = adapter.buildSubmitItemsForRow(mData.get(selectedPosition), this@FarmAllocationRecyclerSubAdapter.pos)
+                confirmAndCancelAllocation(reason, resubmitItems)
+            }
+        }, true, true)
     }
 
     private fun cancelreasonemp(lineId: String, detaillineId: String) {
@@ -965,24 +1204,11 @@ if(!PREFAVGWT.equals("0"))
                     AppDialogs.showSingleChoice(myContext, "Choose Cancel Reason", aCancelresionList, object : SingleChoiceAdapter.Callback {
                         override fun info(pos: Int, text: String) {
                             AppDialogs.hideSingleChoice()
-                            //adapter.cancelOrderreason(mParentObj.headerID,text)
-                            AppDialogs.customDoubleAction(myContext, "", "Are you sure want to Cancel this farm allocation ?", "Yes",
-                                "No", object : AppDialogs.OptionListener {
-                                    override fun no() {
-
-                                    }
-
-                                    override fun yes() {
-
-
-                                        adapter.cancelOrderreason(mParentObj.headerID,text, mData.get(selectedPosition).detaillineId)
-
-
-                                    }
-
-
-                                }, true, false)
-
+                            if (text.trim().equals(reasonWsWronglyAllocated, true)) {
+                                promptNewWsNameThenCancel(text.trim())
+                            } else {
+                                confirmAndCancelAllocation(text)
+                            }
                         }
                     }, true, true)
                 } else {

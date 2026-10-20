@@ -82,6 +82,8 @@ class AppServices {
         val get_declare_diffprice = "pricedeclaration/get_declare_diffprice"
         val get_cancelreasonemp = "farmallocation/get_cancelreasonemp"
         val OrderCancel = "farmallocation/OrderCancel"
+        val get_branch_farmprice = "farmallocation/branch_farmprice"
+        val insert_orderlinefarmpricedet = "farmallocation/insert_orderlinefarmpricedet"
         val get_liftsmsview_region = "liftingotp/get_liftsmsview_region"
         val get_liftsmsview_order = "liftingotp/get_liftsmsview_order"
         val get_today_target_cluster = "pricedeclaration/get_today_target_cluster"
@@ -96,6 +98,7 @@ class AppServices {
         val get_bookorder_order = "bookorderview/get_bookorder_order"
         val update_bookorder = "bookorderview/update_bookorder"
         val update_pricelistorder = "bookorderview/update_pricelistorder"
+        val update_downtrentorder = "bookorderview/update_downtrentorder"
     }
 
     private interface ApiInterface {

@@ -166,9 +166,11 @@ class bookorderRecyclerAdapter (
 
         aHolder.mySwitch.setOnCheckedChangeListener(null)
         aHolder.mySwitch_price.setOnCheckedChangeListener(null)
+        aHolder.mySwitch_pricestop.setOnCheckedChangeListener(null)
 
         aHolder.mySwitch.isChecked = data.closeOrder.equals("1")
         aHolder.mySwitch_price.isChecked = data.priceStop.equals("1")
+        aHolder.mySwitch_pricestop.isChecked = data.priceDowntrent.equals("1")
 
         aHolder.mySwitch.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
@@ -203,6 +205,33 @@ class bookorderRecyclerAdapter (
                     "N",
                     data.locationName
                 )
+            }
+        }
+        aHolder.mySwitch_pricestop.setOnCheckedChangeListener { _, isChecked ->
+            if (data.priceDowntrent.equals("0")) {
+                if (data.priceDeclared.equals("0")) {
+                    if (isChecked) {
+                        aHolder.mySwitch_pricestop.isChecked = false
+                        (myContext as bookOrderViewActivity).update_downtrendList(
+                            data.branchCode,
+                            "Y",
+                            data.locationName
+                        )
+                    } else {
+                        aHolder.mySwitch_pricestop.isChecked = true
+                        (myContext as bookOrderViewActivity).update_downtrendList(
+                            data.branchCode,
+                            "N",
+                            data.locationName
+                        )
+                    }
+                } else {
+                    aHolder.mySwitch_pricestop.isChecked = false
+                    AppDialogs.showToastshort(myContext, "Price is already Declared to this branch.")
+                }
+            } else {
+                aHolder.mySwitch_pricestop.isChecked = true
+                AppDialogs.showToastshort(myContext, "Price Down trend is Enabled already.")
             }
         }
     }
@@ -328,6 +357,7 @@ class bookorderRecyclerAdapter (
         val status_tv: TextView
         val mySwitch: Switch
         val mySwitch_price: Switch
+        val mySwitch_pricestop: Switch
 
         init {
             branch_tv = aView.findViewById<View>(R.id.branch_tv) as TextView
@@ -338,6 +368,7 @@ class bookorderRecyclerAdapter (
             status_tv = aView.findViewById<View>(R.id.status_tv) as TextView
             mySwitch = aView.findViewById<View>(R.id.mySwitch) as Switch
             mySwitch_price = aView.findViewById<View>(R.id.mySwitch_price) as Switch
+            mySwitch_pricestop = aView.findViewById<View>(R.id.mySwitch_pricesstop) as Switch
         }
     }
 

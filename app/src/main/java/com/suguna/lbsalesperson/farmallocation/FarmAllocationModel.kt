@@ -241,3 +241,22 @@ class FarmAllocationModel : Response(), Serializable {
         var PROD_NAME = ""
     }
 }
+
+class FarmPriceFarmListModel : Response(), Serializable {
+
+    @SerializedName("BRANCHES")
+    val branches: ArrayList<FarmAllocationModel.Branches>? = null
+
+    @SerializedName("RESULT")
+    val result: ArrayList<FarmAllocationModel.Branches>? = null
+
+    @SerializedName("RESULT1")
+    val result1: ArrayList<FarmAllocationModel.Branches>? = null
+
+    fun farmList(): ArrayList<FarmAllocationModel.Branches> {
+        if (!branches.isNullOrEmpty()) return branches
+        if (!result.isNullOrEmpty()) return result
+        if (!result1.isNullOrEmpty()) return result1
+        return arrayListOf()
+    }
+}

@@ -88,10 +88,10 @@ public class DatabaseUpDown {
             Log.e("Http Response:", responseBody.toString());
 
         } catch (ClientProtocolException e) {
-
+            Log.e("Http Response:1", e.getMessage());
             // TODO Auto-generated catch block
         } catch (IOException e) {
-
+            Log.e("Http Response:2", e.getMessage());
             // TODO Auto-generated catch block
         }
         return line;
@@ -152,6 +152,7 @@ public class DatabaseUpDown {
         boolean flag = false;
         line=get_reponse_withoutHeader(URL + METHOD_NAME,json);
         try { // Locate the array name in`
+            Log.e("json:1", line);
             JSONObject object = new JSONObject(line);
             String Status = object.getString("STATUS");
 

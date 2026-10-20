@@ -74,6 +74,16 @@
                     android:layout_weight="1.25"
                     android:src="@drawable/ic_delete_new" />
 
+                <ImageView
+                    android:id="@+id/edit_farm_img"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.25"
+                    android:contentDescription="@string/label_farm_name"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_edit_farm"
+                    android:visibility="gone" />
+
 
             </LinearLayout>
             <LinearLayout

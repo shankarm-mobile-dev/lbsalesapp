@@ -161,7 +161,7 @@ class MainActivity : AppCompatActivity(), DashBoardClickListener {
                 val vv: DasboardMenus? = DasboardMenus()
                 vv?.icons = myMenuImageArray.getResourceId(k, 0)
                 vv?.title = myMenuTitleArray.get(k)
-                if (!( (vv?.title.equals(getString(R.string.label_price_declaration))) || (vv?.title.equals(getString(R.string.label_diff_price_declaration))) || ((vv?.title.equals(getString(R.string.label_order_status)))) || ((vv?.title.equals(getString(R.string.label_liftotp_view)))) || ((vv?.title.equals(getString(R.string.label_today_target)))) || ((vv?.title.equals(getString(R.string.label_exceptipn_order)))) || ((vv?.title.equals(getString(R.string.label_so_order)))) || ((vv?.title.equals(getString(R.string.label_book_order_view)))))) {
+                if (!( (vv?.title.equals(getString(R.string.label_price_declaration))) || (vv?.title.equals(getString(R.string.label_diff_price_declaration))) || ((vv?.title.equals(getString(R.string.label_order_status)))) || ((vv?.title.equals(getString(R.string.label_liftotp_view)))) || ((vv?.title.equals(getString(R.string.label_today_target)))) || ((vv?.title.equals(getString(R.string.label_exceptipn_order)))) || ((vv?.title.equals(getString(R.string.label_book_order_view)))))) {
                     mMenus.add(vv!!)
                 }
             } /*}else {
